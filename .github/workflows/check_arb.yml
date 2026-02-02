@@ -60,18 +60,7 @@ jobs:
           tar -xzvf payload-dumper.tar.gz -C tools
           find tools -name "payload-dumper-go" -type f -exec mv {} tools/payload-dumper \;
           chmod +x tools/payload-dumper
-
-      - name: Download Firmware History (INI)
-        # Only needed for CN fallback in previous logic, but spring mapping relies on it?
-        # fetch_firmware.py handles springer internally now without needing the INI file downloaded beforehand?
-        # Actually fetch_firmware.py logic scrapes the site directly. parse_ini.py uses local file. 
-        # The new fetch_firmware.py logic does NOT use parse_ini.py or the INI file. It scrapes.
-        # So we might not need this step for fetching! 
-        # But let's keep it if we want to sync the INI? No, we are building JSON history.
-        # I'll comment it out or remove it.
-        run: |
-          echo "Skipping INI download - using live scrape via fetch_firmware.py"
-
+          
       - name: Get Firmware Details
         id: get_details
         run: |

@@ -8,10 +8,10 @@ Automated ARB (Anti-Rollback) index tracker for OnePlus devices. This repository
 
 | Region | Model | Firmware Version | ARB Index | OEM Version | Last Checked | Safe |
 |--------|-------|------------------|-----------|-------------|--------------|------|
-| Global | CPH2747 | CPH2747_16.0.3.501(EX01) | **0** | Major: **3**, Minor: **0** | 2026-01-27 | ✅ |
-| Europe | CPH2747 | CPH2747_16.0.3.501(EX01) | **0** | Major: **3**, Minor: **0** | 2026-01-27 | ✅ |
-| India | CPH2745 | CPH2745_16.0.3.501(EX01) | **0** | Major: **3**, Minor: **0** | 2026-01-27 | ✅ |
-| China | PLK110 | PLK110_16.0.3.503(CN01) | **0** | Major: **3**, Minor: **0** | 2026-01-27 | ✅ |
+| Global | CPH2747 | CPH2747_16.0.3.501(EX01) | **0** | Major: **3**, Minor: **0** | 2026-02-02 | ✅ |
+| Europe | CPH2747 | CPH2747_16.0.3.501(EX01) | **0** | Major: **3**, Minor: **0** | 2026-02-02 | ✅ |
+| India | CPH2745 | CPH2745_16.0.3.501(EX01) | **0** | Major: **3**, Minor: **0** | 2026-02-02 | ✅ |
+| China | PLK110 | PLK110_16.0.3.503(CN01) | **0** | Major: **3**, Minor: **0** | 2026-02-02 | ✅ |
 
 ---
 
@@ -19,9 +19,9 @@ Automated ARB (Anti-Rollback) index tracker for OnePlus devices. This repository
 
 | Region | Model | Firmware Version | ARB Index | OEM Version | Last Checked | Safe |
 |--------|-------|------------------|-----------|-------------|--------------|------|
-| Global | CPH2741 | CPH2769_16.0.3.501(EX01) | **0** | Major: **3**, Minor: **0** | 2026-01-31 | ✅ |
-| Europe | CPH2741 | CPH2769_16.0.2.401(EX01) | **0** | Major: **3**, Minor: **0** | 2026-01-27 | ✅ |
-| India | CPH2741 | CPH2767_16.0.3.501(EX01) | **0** | Major: **3**, Minor: **0** | 2026-01-27 | ✅ |
+| Global | CPH2741 | CPH2769_16.0.3.501(EX01) | **0** | Major: **3**, Minor: **0** | 2026-02-02 | ✅ |
+| Europe | CPH2741 | CPH2769_16.0.2.401(EX01) | **0** | Major: **3**, Minor: **0** | 2026-02-02 | ✅ |
+| India | CPH2741 | CPH2767_16.0.3.501(EX01) | **0** | Major: **3**, Minor: **0** | 2026-02-02 | ✅ |
 
 ---
 
@@ -29,10 +29,10 @@ Automated ARB (Anti-Rollback) index tracker for OnePlus devices. This repository
 
 | Region | Model | Firmware Version | ARB Index | OEM Version | Last Checked | Safe |
 |--------|-------|------------------|-----------|-------------|--------------|------|
-| Global | CPH2649 | CPH2653_16.0.3.501(EX01) | **1** | Major: **3**, Minor: **0** | 2026-01-27 | ❌ |
-| Europe | CPH2649 | CPH2653_16.0.3.501(EX01) | **1** | Major: **3**, Minor: **0** | 2026-01-27 | ❌ |
-| India | CPH2649 | CPH2649_16.0.3.501(EX01) | **1** | Major: **3**, Minor: **0** | 2026-01-27 | ❌ |
-| China | PJZ110 | PJZ110_16.0.3.501(CN01) | **1** | Major: **3**, Minor: **0** | 2026-01-27 | ❌ |
+| Global | CPH2649 | CPH2653_16.0.3.501(EX01) | **1** | Major: **3**, Minor: **0** | 2026-02-02 | ❌ |
+| Europe | CPH2649 | CPH2653_16.0.3.501(EX01) | **1** | Major: **3**, Minor: **0** | 2026-02-02 | ❌ |
+| India | CPH2649 | CPH2649_16.0.3.501(EX01) | **1** | Major: **3**, Minor: **0** | 2026-02-02 | ❌ |
+| China | PJZ110 | PJZ110_16.0.3.501(CN01) | **1** | Major: **3**, Minor: **0** | 2026-02-02 | ❌ |
 
 ---
 
@@ -40,9 +40,9 @@ Automated ARB (Anti-Rollback) index tracker for OnePlus devices. This repository
 
 | Region | Model | Firmware Version | ARB Index | OEM Version | Last Checked | Safe |
 |--------|-------|------------------|-----------|-------------|--------------|------|
-| Global | CPH2573 | CPH2581_16.0.3.500(EX01) | **1** | Major: **3**, Minor: **0** | 2026-01-30 | ❌ |
-| Europe | CPH2573 | CPH2581_16.0.3.500(EX01) | **1** | Major: **3**, Minor: **0** | 2026-01-28 | ❌ |
-| India | CPH2573 | CPH2573_16.0.3.500(EX01) | **1** | Major: **3**, Minor: **0** | 2026-01-30 | ❌ |
+| Global | CPH2573 | CPH2581_16.0.3.500(EX01) | **1** | Major: **3**, Minor: **0** | 2026-02-02 | ❌ |
+| Europe | CPH2573 | CPH2581_16.0.3.500(EX01) | **1** | Major: **3**, Minor: **0** | 2026-02-02 | ❌ |
+| India | CPH2573 | CPH2573_16.0.3.500(EX01) | **1** | Major: **3**, Minor: **0** | 2026-02-02 | ❌ |
 | China | PJD110 | PJD110_16.0.3.500(CN01) | **1** | Major: **3**, Minor: **0** | 2026-02-02 | ❌ |
 
 

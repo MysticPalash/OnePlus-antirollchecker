@@ -47,7 +47,6 @@ DEVICE_METADATA: Dict[str, DeviceMeta] = {
             "GLO": "CPH2649",
             "EU": "CPH2649",
             "IN": "CPH2649",
-            "IN": "CPH2649",
             "CN": "PJZ110",
             "NA": "CPH2655"
         }
@@ -57,7 +56,6 @@ DEVICE_METADATA: Dict[str, DeviceMeta] = {
         "models": {
             "GLO": "CPH2573", 
             "EU": "CPH2573", 
-            "IN": "CPH2573", 
             "IN": "CPH2573", 
             "CN": "PJD110",
             "NA": "CPH2583"
@@ -92,7 +90,6 @@ DEVICE_METADATA: Dict[str, DeviceMeta] = {
         "models": {
             "GLO": "NE2215",
             "EU": "NE2213",
-            "IN": "NE2211",
             "IN": "NE2211",
             "CN": "NE2210",
             "NA": "NE2215"

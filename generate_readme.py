@@ -178,6 +178,7 @@ def generate_readme(history_data: Dict) -> str:
         '',
         '## 🛠️ Credits',
         '- **Payload Extraction**: [otaripper](https://github.com/syedinsaf/otaripper) by [syedinsaf](https://github.com/syedinsaf) - for fast and reliable OTA extraction.',
+        '- **ARB Extraction**: [arbextract](https://github.com/koaaN/arbextract) by [koaaN](https://github.com/koaaN) - for parsing QC_IMAGE_VERSION_INFO.',
         '',
         '## 🤖 Workflow Status',
         '[![Check ARB](https://github.com/Bartixxx32/Oneplus-antirollchecker/actions/workflows/check_arb.yml/badge.svg)](https://github.com/Bartixxx32/Oneplus-antirollchecker/actions/workflows/check_arb.yml)'

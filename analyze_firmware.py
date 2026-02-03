@@ -39,40 +39,45 @@ def analyze_firmware(zip_path, tools_dir, output_dir, final_dir=None):
     otaripper = tools_dir / "otaripper"
     arbextract = tools_dir / "arbextract"
     
-    # 1. Clean/Create directories
-    # We use output_dir as temp extraction
-    if output_dir.exists():
-        shutil.rmtree(output_dir)
-    output_dir.mkdir(parents=True)
-    
-    if not final_dir.exists():
-        final_dir.mkdir(parents=True)
-        
-    # otaripper <zip> -p <partitions> -o <output>
-    # Add -n to prevent opening folder
-    cmd_extract = [str(otaripper), str(zip_path), "-p", "xbl_config", "-o", str(output_dir), "-n"]
-    if not run_command(cmd_extract):
-        return None
-        
-    # 2. Find extracted image recursively
-    # otaripper might create subdirectories with timestamps
-    img_files = list(output_dir.rglob("*xbl_config*.img"))
-    if not img_files:
-        logger.error("xbl_config image not found in extraction output")
-        return None
-    
-    # Take the first one found
-    src_img = img_files[0]
     final_img = final_dir / "xbl_config.img"
     
-    logger.info(f"Found image: {src_img}")
-    logger.info(f"Moving to: {final_img}")
-    
-    # Move and rename
-    shutil.move(src_img, final_img)
-    
-    # Cleanup temp extraction
-    shutil.rmtree(output_dir)
+    # 1. Skip extraction if image already exists (cache hit optimization)
+    if final_img.exists():
+        logger.info(f"Image already exists at {final_img}, skipping extraction.")
+    else:
+        if not zip_path or not Path(zip_path).exists():
+            logger.error("Missing firmware.zip and no cached image found.")
+            return None
+        
+        zip_path = Path(zip_path).resolve()
+
+        # 2. Clean/Create directories for extraction
+        if output_dir.exists():
+            shutil.rmtree(output_dir)
+        output_dir.mkdir(parents=True)
+        
+        if not final_dir.exists():
+            final_dir.mkdir(parents=True)
+            
+        # otaripper <zip> -p <partitions> -o <output>
+        cmd_extract = [str(otaripper), str(zip_path), "-p", "xbl_config", "-o", str(output_dir), "-n"]
+        if not run_command(cmd_extract):
+            return None
+            
+        # 3. Find extracted image recursively
+        img_files = list(output_dir.rglob("*xbl_config*.img"))
+        if not img_files:
+            logger.error("xbl_config image not found in extraction output")
+            return None
+        
+        # Move and rename
+        src_img = img_files[0]
+        logger.info(f"Found image: {src_img}")
+        logger.info(f"Moving to: {final_img}")
+        shutil.move(src_img, final_img)
+        
+        # Cleanup temp extraction
+        shutil.rmtree(output_dir)
     
     # 3. Run arbextract on the FINAL file
     cmd_arb = [str(arbextract), str(final_img)]

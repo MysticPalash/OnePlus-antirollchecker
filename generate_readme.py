@@ -40,7 +40,7 @@ def get_region_name(variant: str) -> str:
         'EU': 'Europe',
         'IN': 'India',
         'CN': 'China',
-        'NA': 'North America'
+        'NA': 'NA'
     }
     return names.get(variant, variant)
 
@@ -96,7 +96,7 @@ def generate_device_section(device_id: str, device_name: str, history_data: Dict
             
         lines.append(
             f"| {region_name} | {model} | {ver} | **{current_entry['arb']}** | "
-            f"Major: **{current_entry['major']}**, Minor: **{current_entry['minor']}** | "
+            f"Major: **{current_entry['major']}**,&nbsp;Minor: **{current_entry['minor']}** | "
             f"{current_entry['last_checked']} | {safe_icon} |"
         )
     

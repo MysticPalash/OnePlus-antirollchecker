@@ -33,7 +33,7 @@ def get_region_name(variant: str) -> str:
         'EU': 'Europe',
         'IN': 'India',
         'CN': 'China',
-        'NA': 'North America'
+        'NA': 'NA'
     }
     return names.get(variant, variant)
 

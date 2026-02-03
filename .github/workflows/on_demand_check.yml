@@ -116,6 +116,7 @@ jobs:
           version = meta.get('version_name_show', meta.get('display-version', 'Unknown'))
           build = meta.get('post-build', 'Unknown')
           
+          print(f"@{os.environ.get('ISSUE_USER', 'user')}, here is your analysis!")
           print(f'### 👑 🎯 Analysis Result')
           print(f'- **ARB Index**: \`{arb}\`')
           print(f'- **Status**: {status}')
@@ -129,6 +130,11 @@ jobs:
           gh issue comment ${{ github.event.issue.number }} --body "$COMMENT"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_USER: ${{ github.event.issue.user.login }}
+
+      - name: Wait before closing
+        if: always()
+        run: sleep 180
 
       - name: Close Issue
         if: always()

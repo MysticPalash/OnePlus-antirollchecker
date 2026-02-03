@@ -94,9 +94,9 @@ jobs:
         with:
           path: |
             arb_check_done.txt
-            extracted/
+            firmware_data/
           # Cache key includes device and variant to be separate
-          key: arb-check-v6-${{ matrix.device }}-${{ matrix.variant }}-${{ steps.get_details.outputs.version }}
+          key: arb-check-v7-${{ matrix.device }}-${{ matrix.variant }}-${{ steps.get_details.outputs.version }}
 
       - name: Download Firmware
         if: steps.cache-arb.outputs.cache-hit != 'true'
@@ -206,7 +206,7 @@ jobs:
           path: |
             arb_check_done.txt
             firmware_data/
-          key: arb-check-v6-${{ matrix.device }}-${{ matrix.variant }}-${{ steps.get_details.outputs.version }}
+          key: arb-check-v7-${{ matrix.device }}-${{ matrix.variant }}-${{ steps.get_details.outputs.version }}
 
       - name: Upload JSON History
         uses: actions/upload-artifact@v4

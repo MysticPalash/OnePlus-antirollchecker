@@ -8,6 +8,33 @@
       "first_seen": "2026-02-03",
       "last_checked": "2026-02-03",
       "status": "current"
+    },
+    {
+      "version": "CPH2487_15.0.0.870(EX01)",
+      "arb": 0,
+      "major": 2,
+      "minor": 0,
+      "first_seen": "2026-02-03",
+      "last_checked": "2026-02-03",
+      "status": "archived"
+    },
+    {
+      "version": "CPH2487_14.0.0.810(EX01)",
+      "arb": 0,
+      "major": 2,
+      "minor": 0,
+      "first_seen": "2026-02-03",
+      "last_checked": "2026-02-03",
+      "status": "archived"
+    },
+    {
+      "version": "CPH2487_15.0.0.601(EX01)",
+      "arb": 0,
+      "major": 2,
+      "minor": 0,
+      "first_seen": "2026-02-03",
+      "last_checked": "2026-02-03",
+      "status": "archived"
     }
   ],
   "device": "OnePlus 11R",

@@ -2,12 +2,16 @@ name: On-Demand ARB Checker
 
 on:
   issues:
-    types: [opened]
+    types: [opened, edited]
+
+concurrency:
+  group: check-arb-${{ github.event.issue.number }}
+  cancel-in-progress: true
 
 jobs:
   check-firmware:
-    # Standard: Only trigger if title contains [CHECK] and body has a .zip link
-    if: startsWith(github.event.issue.title, '[CHECK]') && contains(github.event.issue.body, '.zip')
+    # Trigger if title starts with [CHECK] and body has a .zip link
+    if: (startsWith(github.event.issue.title, '[CHECK]') || contains(github.event.issue.labels.*.name, 'checker')) && contains(github.event.issue.body, '.zip')
     runs-on: ubuntu-latest
     permissions:
       issues: write

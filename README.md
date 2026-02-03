@@ -202,6 +202,7 @@ Automated ARB (Anti-Rollback) index tracker for OnePlus devices. This repository
 
 ## 🛠️ Credits
 - **Payload Extraction**: [otaripper](https://github.com/syedinsaf/otaripper) by [syedinsaf](https://github.com/syedinsaf) - for fast and reliable OTA extraction.
+- **ARB Extraction**: [arbextract](https://github.com/koaaN/arbextract) by [koaaN](https://github.com/koaaN) - for parsing ARB index from xbl_config.
 
 ## 🤖 Workflow Status
 [![Check ARB](https://github.com/Bartixxx32/Oneplus-antirollchecker/actions/workflows/check_arb.yml/badge.svg)](https://github.com/Bartixxx32/Oneplus-antirollchecker/actions/workflows/check_arb.yml)

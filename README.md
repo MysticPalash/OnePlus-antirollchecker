@@ -34,8 +34,8 @@ Automated ARB (Anti-Rollback) index tracker for OnePlus devices. This repository
 | Global | CPH2649 | CPH2653_16.0.3.501(EX01) | **1** | Major: **3**, Minor: **0** | 2026-02-03 | ❌ |
 | Europe | CPH2649 | CPH2653_16.0.3.501(EX01) | **1** | Major: **3**, Minor: **0** | 2026-02-03 | ❌ |
 | India | CPH2649 | CPH2649_16.0.3.501(EX01) | **1** | Major: **3**, Minor: **0** | 2026-02-03 | ❌ |
-| China | PJZ110 | PJZ110_16.0.3.501(CN01) | **1** | Major: **3**, Minor: **0** | 2026-02-03 | ❌ |
 | North America | CPH2655 | CPH2655_15.0.0.832(EX01) | **0** | Major: **3**, Minor: **0** | 2026-02-03 | ✅ |
+| China | PJZ110 | PJZ110_16.0.3.501(CN01) | **1** | Major: **3**, Minor: **0** | 2026-02-03 | ❌ |
 
 ---
 
@@ -46,8 +46,8 @@ Automated ARB (Anti-Rollback) index tracker for OnePlus devices. This repository
 | Global | CPH2573 | CPH2581_16.0.3.500(EX01) | **1** | Major: **3**, Minor: **0** | 2026-02-03 | ❌ |
 | Europe | CPH2573 | CPH2581_16.0.3.500(EX01) | **1** | Major: **3**, Minor: **0** | 2026-02-03 | ❌ |
 | India | CPH2573 | CPH2573_16.0.3.500(EX01) | **1** | Major: **3**, Minor: **0** | 2026-02-03 | ❌ |
-| China | PJD110 | PJD110_16.0.3.500(CN01) | **1** | Major: **3**, Minor: **0** | 2026-02-03 | ❌ |
 | North America | CPH2583 | CPH2583_11_C.61 | **0** | Major: **3**, Minor: **0** | 2026-02-03 | ✅ |
+| China | PJD110 | PJD110_16.0.3.500(CN01) | **1** | Major: **3**, Minor: **0** | 2026-02-03 | ❌ |
 
 ---
 
@@ -88,8 +88,8 @@ Automated ARB (Anti-Rollback) index tracker for OnePlus devices. This repository
 | Global | NE2215 | NE2213_15.0.0.1302(EX01) | **0** | Major: **2**, Minor: **0** | 2026-02-03 | ✅ |
 | Europe | NE2213 | NE2213_15.0.0.1302(EX01) | **0** | Major: **2**, Minor: **0** | 2026-02-03 | ✅ |
 | India | NE2211 | NE2211_16.0.3.500(EX01) | **0** | Major: **2**, Minor: **0** | 2026-02-03 | ✅ |
-| China | NE2210 | NE2210_15.0.0.1301(CN01) | **0** | Major: **2**, Minor: **0** | 2026-02-03 | ✅ |
 | North America | NE2215 | NE2215_15.0.0.401(EX01) | **0** | Major: **2**, Minor: **0** | 2026-02-03 | ✅ |
+| China | NE2210 | NE2210_15.0.0.1301(CN01) | **0** | Major: **2**, Minor: **0** | 2026-02-03 | ✅ |
 
 ---
 

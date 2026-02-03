@@ -29,6 +29,36 @@ def run_command(cmd, cwd=None):
     return result.stdout
 
 import shutil
+import zipfile
+
+def extract_ota_metadata(zip_path):
+    """Peek into the zip to find META-INF/com/android/metadata"""
+    metadata = {}
+    try:
+        with zipfile.ZipFile(zip_path, 'r') as z:
+            # 1. Try META-INF/com/android/metadata
+            meta_path = 'META-INF/com/android/metadata'
+            if meta_path in z.namelist():
+                content = z.read(meta_path).decode('utf-8')
+                for line in content.splitlines():
+                    if '=' in line:
+                        k, v = line.split('=', 1)
+                        metadata[k.strip()] = v.strip()
+            
+            # 2. Try payload_properties.txt (shorter info)
+            prop_path = 'payload_properties.txt'
+            if prop_path in z.namelist():
+                content = z.read(prop_path).decode('utf-8')
+                for line in content.splitlines():
+                    if '=' in line or ':' in line:
+                        delim = '=' if '=' in line else ':'
+                        k, v = line.split(delim, 1)
+                        # Avoid overwriting metadata if already found
+                        if k.strip() not in metadata:
+                            metadata[k.strip()] = v.strip()
+    except Exception as e:
+        logger.warning(f"Failed to extract metadata from zip: {e}")
+    return metadata
 
 def analyze_firmware(zip_path, tools_dir, output_dir, final_dir=None):
     zip_path = Path(zip_path).resolve()
@@ -40,6 +70,11 @@ def analyze_firmware(zip_path, tools_dir, output_dir, final_dir=None):
     arbextract = tools_dir / "arbextract"
     
     final_img = final_dir / "xbl_config.img"
+    
+    # 0. Extract basic metadata (always try even if cache hit)
+    metadata = {}
+    if zip_path and Path(zip_path).exists():
+        metadata = extract_ota_metadata(zip_path)
     
     # 1. Skip extraction if image already exists (cache hit optimization)
     if final_img.exists():
@@ -104,6 +139,10 @@ def analyze_firmware(zip_path, tools_dir, output_dir, final_dir=None):
         logger.error("Could not parse ARB index from arbextract output")
         return None
         
+    # Append metadata
+    if metadata:
+        result['ota_metadata'] = metadata
+
     return result
 
 def main():

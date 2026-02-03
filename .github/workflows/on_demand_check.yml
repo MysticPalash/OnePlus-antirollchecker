@@ -94,13 +94,38 @@ jobs:
 
       - name: Post Final Result
         if: always()
-        uses: peter-evans/create-or-update-comment@v4
-        with:
-          issue-number: ${{ github.event.issue.number }}
-          body: |
-            ${{ steps.analyze.outputs.arb != '' && format('### 🎯 Analysis Result
-            - **ARB Index**: `{0}`
-            - **Status**: {1}', steps.analyze.outputs.arb, (steps.analyze.outputs.arb == '0' && '✅ **Safe to flash/roll back**' || '⚠️ **Anti-Rollback Active!**')) || '❌ **Analysis Failed**' }}
+        run: |
+          if [ ! -f result.json ]; then
+            gh issue comment ${{ github.event.issue.number }} --body "❌ **Analysis Failed**\nSomething went wrong. The partition \`xbl_config\` was not found or the link is invalid."
+            exit 0
+          fi
+          
+          COMMENT=$(python3 -c "
+          import json
+          res = json.load(open('result.json'))
+          arb = res.get('arb_index', 'Unknown')
+          status = '✅ **Safe to flash/roll back**' if arb == '0' else '⚠️ **Anti-Rollback Active!**'
+          
+          meta = res.get('ota_metadata', {})
+          device = meta.get('pre-device', 'Unknown')
+          product = meta.get('product_name', 'Unknown')
+          patch = meta.get('post-security-patch-level', meta.get('security_patch', 'Unknown'))
+          version = meta.get('version_name_show', meta.get('display-version', 'Unknown'))
+          build = meta.get('post-build', 'Unknown')
+          
+          print(f'### 🎯 Analysis Result')
+          print(f'- **ARB Index**: \`{arb}\`')
+          print(f'- **Status**: {status}')
+          print(f'\n#### 📱 Firmware Details')
+          print(f'- **Version**: \`{version}\`')
+          print(f'- **Product**: \`{product}\` (\`{device}\`)')
+          print(f'- **Security Patch**: \`{patch}\`')
+          print(f'- **Build ID**: \`{build}\`')
+          ")
+          
+          gh issue comment ${{ github.event.issue.number }} --body "$COMMENT"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Close Issue
         if: always()

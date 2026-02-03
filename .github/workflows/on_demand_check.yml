@@ -40,13 +40,16 @@ jobs:
 
       - name: Extract URL from Issue
         id: extract_url
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
         run: |
           URL=$(python3 -c "
-          import re, sys
-          body = '''${{ github.event.issue.body }}'''
-          links = re.findall(r'(https?://[^\s]+\.zip[^\s]*)', body)
+          import re, os
+          body = os.environ.get('ISSUE_BODY', '')
+          # Match URLs ending in .zip, followed by optional query params
+          links = re.findall(r'(https?://[^\s]+\.zip(?:[^\s\"\'\(\)\[\]]*)?)', body)
           if links:
-              print(links[0].strip('()[]\"\''))
+              print(links[0])
           ")
           
           if [ -z "$URL" ]; then

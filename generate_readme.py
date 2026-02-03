@@ -52,7 +52,7 @@ def generate_device_section(device_id: str, device_name: str, history_data: Dict
     active_regions = []
     # Use standard regions order
     # Use standard regions order
-    regions = ['GLO', 'EU', 'IN', 'CN', 'NA']
+    regions = ['GLO', 'EU', 'IN', 'NA', 'CN']
     
     for variant in regions:
         key = f'{device_id}_{variant}'

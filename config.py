@@ -1,4 +1,4 @@
-"""
+""""
 Shared configuration and constants for OnePlus ARB Checker.
 """
 
@@ -30,6 +30,7 @@ DEVICE_METADATA: Dict[str, DeviceMeta] = {
             "GLO": "CPH2747",
             "EU": "CPH2747",
             "IN": "CPH2745",
+            "NA": "Unknown",
             "CN": "PLK110"
         }
     },
@@ -47,8 +48,8 @@ DEVICE_METADATA: Dict[str, DeviceMeta] = {
             "GLO": "CPH2649",
             "EU": "CPH2649",
             "IN": "CPH2649",
-            "CN": "PJZ110",
-            "NA": "CPH2655"
+            "NA": "CPH2655",
+            "CN": "PJZ110"
         }
     },
     "12": {
@@ -57,8 +58,8 @@ DEVICE_METADATA: Dict[str, DeviceMeta] = {
             "GLO": "CPH2573", 
             "EU": "CPH2573", 
             "IN": "CPH2573", 
-            "CN": "PJD110",
-            "NA": "CPH2583"
+            "NA": "CPH2583",
+            "CN": "PJD110"
         }
     },
     "12R": {
@@ -91,8 +92,8 @@ DEVICE_METADATA: Dict[str, DeviceMeta] = {
             "GLO": "NE2215",
             "EU": "NE2213",
             "IN": "NE2211",
-            "CN": "NE2210",
-            "NA": "NE2215"
+            "NA": "NE2215",
+            "CN": "NE2210"
         }
     },
     "10T": {
@@ -301,3 +302,4 @@ def get_display_name(device_id: str) -> str:
 def get_model_number(device_id: str, region: str) -> str:
     """Get the model number for a specific device and region."""
     return DEVICE_METADATA.get(device_id, {}).get("models", {}).get(region, "Unknown")
+"

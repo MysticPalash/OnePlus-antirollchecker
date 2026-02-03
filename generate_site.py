@@ -50,7 +50,7 @@ def process_data(history_data):
 
         # Standard regions order
         # Standard regions order
-        regions = ['GLO', 'EU', 'IN', 'CN', 'NA']
+        regions = ['GLO', 'EU', 'IN', 'NA', 'CN']
 
         for variant in regions:
             key = f'{device_id}_{variant}'

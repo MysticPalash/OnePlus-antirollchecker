@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     strategy:
-      max-parallel: 5 # Avoid hitting rate limits too hard
+      max-parallel: 20 # Increased for faster backfill, watch out for rate limits
       fail-fast: false
       matrix: ${{ fromJson(needs.setup-matrix.outputs.matrix) }}
     

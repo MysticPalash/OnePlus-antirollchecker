@@ -21,6 +21,16 @@ class DeviceMeta(TypedDict):
     name: str
     models: DeviceModels
 
+# Device order for README and Website (OnePlus newest first, then Oppo newest first)
+DEVICE_ORDER = [
+    # OnePlus
+    "15R", "Ace 6T", "15", "Pad 3", "Pad 2 Pro", "Ace 5 Ultimate", 
+    "Ace 5 Pro", "Ace 5", "13", "Pad 2", "12", "12R", "Open", 
+    "11", "11R", "10 Pro", "10T", "10R", "9 Pro", "9RT", "9", "9R",
+    # Oppo
+    "Find X8 Ultra", "Find N5", "Find N3", "Find X5 Pro", "Find X5"
+]
+
 # Device Metadata
 # Used for display names, model numbers, and mapping internal IDs to names
 DEVICE_METADATA: Dict[str, DeviceMeta] = {

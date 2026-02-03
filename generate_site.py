@@ -5,7 +5,7 @@ import logging
 from pathlib import Path
 from datetime import datetime, timezone
 from jinja2 import Environment, FileSystemLoader
-from config import DEVICE_METADATA
+from config import DEVICE_METADATA, DEVICE_ORDER
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
@@ -42,14 +42,16 @@ def process_data(history_data):
     devices_list = []
 
     # Iterate over devices in the order defined in config
-    for device_id, meta in DEVICE_METADATA.items():
+    for device_id in DEVICE_ORDER:
+        if device_id not in DEVICE_METADATA:
+            continue
+        meta = DEVICE_METADATA[device_id]
         device_entry = {
             'name': meta['name'],
             'variants': []
         }
 
         # Determine available regions for this device
-        preferred_regions = ['GLO', 'EU', 'IN', 'NA', 'CN']
         available_regions = set(meta.get('models', {}).keys())
         
         # Also check if there are history files for regions not in config
@@ -58,9 +60,16 @@ def process_data(history_data):
                 available_regions.add(key.replace(f"{device_id}_", ""))
                 
         # Order: preferred first, then others sorted
-        regions = [r for r in preferred_regions if r in available_regions]
-        others = sorted([r for r in available_regions if r not in preferred_regions])
-        regions.extend(others)
+        preferred_order = ['GLO', 'EU', 'IN', 'NA', 'CN']
+        
+        # Sort regions based on preferred_order, then alphabetically for others
+        def region_sort_key(r):
+            try:
+                return preferred_order.index(r)
+            except ValueError:
+                return len(preferred_order) # Put non-preferred at the end
+
+        regions = sorted(list(available_regions), key=region_sort_key)
 
         for variant in regions:
             key = f'{device_id}_{variant}'

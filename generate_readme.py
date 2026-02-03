@@ -10,7 +10,7 @@ import argparse
 import logging
 from pathlib import Path
 from typing import Dict, List
-from config import DEVICE_METADATA, DeviceModels
+from config import DEVICE_METADATA, DeviceModels, DEVICE_ORDER, HISTORY_DIR
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
@@ -125,8 +125,11 @@ def generate_readme(history_data: Dict) -> str:
         ''
     ]
     
-    # improved: Iterate over DEVICE_METADATA from config
-    for device_id, meta in DEVICE_METADATA.items():
+    # improved: Iterate over DEVICE_ORDER from config
+    for device_id in DEVICE_ORDER:
+        if device_id not in DEVICE_METADATA:
+            continue
+        meta = DEVICE_METADATA[device_id]
         device_name = meta['name']
         device_lines = generate_device_section(device_id, device_name, history_data)
         if device_lines:

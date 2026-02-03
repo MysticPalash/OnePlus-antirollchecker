@@ -39,10 +39,18 @@ def get_from_oos_api(device_id: str, region: str) -> dict:
     """
     mapped_id = OOS_MAPPING.get(device_id, f"oneplus_{device_id}")
     
+    # Skip OOS API for CN region as per user request
+    if region == "CN":
+        return None
+        
     # Determine brand
     brand = "oneplus"
     if mapped_id.startswith("oppo_") or mapped_id.startswith("find_"):
          brand = "oppo"
+
+    # Map non-CN to EU for Oppo as OOS API often only has EU for these
+    if brand == "oppo" and region != "CN":
+        region = "EU"
 
     # API endpoints
     # OOS_API_URL is now .../api
@@ -119,10 +127,11 @@ def get_signed_url_springer(device_id: str, region: str, target_version: str = N
     # Device name resolution
     device_name = mapped_name
     if device_name not in devices_data:
-        # Try fuzzy match
+        # Try stricter fuzzy match
         found = False
         for d in devices_data:
-            if device_name in d or d in device_name:
+            # Check if name is exact match (case insensitive) or if the identifier contains version suffix but starts with device_name
+            if device_name.upper() == d.upper() or d.upper().startswith(device_name.upper() + " "):
                 device_name = d
                 found = True
                 break

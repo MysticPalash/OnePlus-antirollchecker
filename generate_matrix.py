@@ -12,7 +12,9 @@ def generate_matrix():
         ("Find N3", "IN"), # Fails in check-variant
         ("9R", "IN"),
         ("10R", "IN"),
-        ("Ace 5 Ultimate", "CN")
+        ("Ace 5 Ultimate", "CN"),
+        ("Find X5", "CN"),
+        ("Find X5 Pro", "CN")
     ]
 
     for device_id, meta in DEVICE_METADATA.items():

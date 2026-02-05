@@ -89,9 +89,8 @@
             width: 100%;
             border-collapse: collapse;
             font-size: 0.9em;
-            white-space: nowrap;
             table-layout: fixed;
-            table-layout: fixed;
+            /* Force fixed layout for consistency */
         }
 
         th,
@@ -99,6 +98,9 @@
             text-align: left;
             padding: 12px 15px;
             border-bottom: 1px solid var(--border-color);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         th {
@@ -186,6 +188,59 @@
                 overflow-x: auto;
             }
         }
+
+        /* History styles */
+        .history-row {
+            display: none;
+            background-color: #0d1117;
+        }
+
+        .history-row.active {
+            display: table-row;
+        }
+
+        .history-container {
+            padding: 15px 25px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .history-table {
+            width: 100%;
+            font-size: 0.85rem;
+            margin: 10px 0;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-color);
+        }
+
+        .history-table th {
+            font-size: 0.7rem;
+            padding: 8px 12px;
+        }
+
+        .history-table td {
+            padding: 8px 12px;
+            color: var(--text-muted);
+        }
+
+        .toggle-history {
+            cursor: pointer;
+            color: var(--accent-color);
+            background: none;
+            border: 1px solid var(--accent-color);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            transition: all 0.2s;
+        }
+
+        .toggle-history:hover {
+            background-color: rgba(88, 166, 255, 0.1);
+        }
+
+        .toggle-history.active {
+            background-color: var(--accent-color);
+            color: white;
+        }
     </style>
 </head>
 
@@ -207,10 +262,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -230,8 +286,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -248,8 +308,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -266,8 +330,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -284,8 +352,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -302,10 +374,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -325,8 +398,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -343,8 +420,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -361,8 +442,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -379,10 +464,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -402,8 +488,12 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -420,8 +510,12 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -438,12 +532,16 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
-                                    <strong>NA</strong>
+                                    <strong>North America</strong>
                                     <span class="meta-info">CPH2655</span>
                                 </td>
                                 <td class="version-cell" title="CPH2655_15.0.0.832(EX01)">
@@ -456,16 +554,20 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
                                     <strong>China</strong>
                                     <span class="meta-info">PJZ110</span>
                                 </td>
-                                <td class="version-cell" title="PJZ110_16.0.3.501(CN01)">
-                                    PJZ110_16.0.3.501(CN01)
+                                <td class="version-cell" title="PJZ110_16.0.3.502(CN01)">
+                                    PJZ110_16.0.3.502(CN01)
                                     <span class="meta-info">Major: 3,&nbsp;Minor: 0</span>
                                 </td>
                                 <td><strong>1</strong></td>
@@ -474,8 +576,52 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                    <button class="toggle-history"
+                                        onclick="toggleHistory('13-China', this)">
+                                        History
+                                    </button>
+                                    
+                                </td>
                             </tr>
+                            
+                            <tr id="history-13-China"
+                                class="history-row">
+                                <td colspan="6">
+                                    <div class="history-container">
+                                        <h4 style="margin: 0 0 10px 0; font-size: 0.9rem;">📜 Version History - China</h4>
+                                        <table class="history-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Firmware Version</th>
+                                                    <th>ARB</th>
+                                                    <th>Status</th>
+                                                    <th>OEM Version</th>
+                                                    <th>Last Seen</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                
+                                                <tr>
+                                                    <td>PJZ110_16.0.3.501(CN01)</td>
+                                                    <td>1</td>
+                                                    <td>
+                                                        
+                                                        <span class="badge badge-danger">Protected</span>
+                                                        
+                                                    </td>
+                                                    <td>Major: 3, Minor: 0</td>
+                                                    <td>2026-02-04</td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            
                             
                             
                         </tbody>
@@ -492,10 +638,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -515,16 +662,20 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
                                     <strong>India</strong>
                                     <span class="meta-info">CPH2551</span>
                                 </td>
-                                <td class="version-cell" title="CPH2551_16.0.2.400(EX01)">
-                                    CPH2551_16.0.2.400(EX01)
+                                <td class="version-cell" title="CPH2551_16.0.3.500(EX01)">
+                                    CPH2551_16.0.3.500(EX01)
                                     <span class="meta-info">Major: 2,&nbsp;Minor: 0</span>
                                 </td>
                                 <td><strong>0</strong></td>
@@ -533,12 +684,16 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
-                                    <strong>NA</strong>
+                                    <strong>North America</strong>
                                     <span class="meta-info">CPH2551</span>
                                 </td>
                                 <td class="version-cell" title="CPH2551_15.0.0.822(EX01)">
@@ -551,8 +706,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -569,10 +728,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -592,8 +752,12 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -610,8 +774,12 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -628,12 +796,16 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
-                                    <strong>NA</strong>
+                                    <strong>North America</strong>
                                     <span class="meta-info">CPH2583</span>
                                 </td>
                                 <td class="version-cell" title="CPH2583_11_C.61">
@@ -646,8 +818,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -664,8 +840,12 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -682,10 +862,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -705,8 +886,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -723,8 +908,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -741,12 +930,16 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
-                                    <strong>NA</strong>
+                                    <strong>North America</strong>
                                     <span class="meta-info">CPH2611</span>
                                 </td>
                                 <td class="version-cell" title="CPH2611_11_A.65">
@@ -759,8 +952,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -777,10 +974,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -800,8 +998,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -818,16 +1020,20 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
                                     <strong>India</strong>
                                     <span class="meta-info">CPH2447</span>
                                 </td>
-                                <td class="version-cell" title="CPH2447_16.0.2.400(EX01)">
-                                    CPH2447_16.0.2.400(EX01)
+                                <td class="version-cell" title="CPH2447_16.0.3.500(EX01)">
+                                    CPH2447_16.0.3.500(EX01)
                                     <span class="meta-info">Major: 2,&nbsp;Minor: 0</span>
                                 </td>
                                 <td><strong>0</strong></td>
@@ -836,12 +1042,56 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                    <button class="toggle-history"
+                                        onclick="toggleHistory('11-India', this)">
+                                        History
+                                    </button>
+                                    
+                                </td>
                             </tr>
+                            
+                            <tr id="history-11-India"
+                                class="history-row">
+                                <td colspan="6">
+                                    <div class="history-container">
+                                        <h4 style="margin: 0 0 10px 0; font-size: 0.9rem;">📜 Version History - India</h4>
+                                        <table class="history-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Firmware Version</th>
+                                                    <th>ARB</th>
+                                                    <th>Status</th>
+                                                    <th>OEM Version</th>
+                                                    <th>Last Seen</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                
+                                                <tr>
+                                                    <td>CPH2447_16.0.2.400(EX01)</td>
+                                                    <td>0</td>
+                                                    <td>
+                                                        
+                                                        <span class="badge badge-safe">Safe</span>
+                                                        
+                                                    </td>
+                                                    <td>Major: 2, Minor: 0</td>
+                                                    <td>2026-02-04</td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            
                             
                             <tr>
                                 <td>
-                                    <strong>NA</strong>
+                                    <strong>North America</strong>
                                     <span class="meta-info">CPH2451</span>
                                 </td>
                                 <td class="version-cell" title="CPH2451_15.0.0.800(EX01)">
@@ -854,8 +1104,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -872,10 +1126,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -895,8 +1150,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -913,10 +1172,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -936,8 +1196,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -954,8 +1218,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -972,12 +1240,16 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
-                                    <strong>NA</strong>
+                                    <strong>North America</strong>
                                     <span class="meta-info">NE2215</span>
                                 </td>
                                 <td class="version-cell" title="NE2215_15.0.0.401(EX01)">
@@ -990,8 +1262,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -1008,8 +1284,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -1026,10 +1306,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1049,8 +1330,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -1067,8 +1352,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -1085,12 +1374,16 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
-                                    <strong>NA</strong>
+                                    <strong>North America</strong>
                                     <span class="meta-info">CPH2417</span>
                                 </td>
                                 <td class="version-cell" title="CPH2417_11_C.46">
@@ -1103,8 +1396,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -1121,10 +1418,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1144,8 +1442,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -1162,12 +1464,16 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
-                                    <strong>NA</strong>
+                                    <strong>North America</strong>
                                     <span class="meta-info">LE2125</span>
                                 </td>
                                 <td class="version-cell" title="LE2125_11_F.30">
@@ -1180,8 +1486,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -1198,10 +1508,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1221,8 +1532,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -1239,12 +1554,16 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
-                                    <strong>NA</strong>
+                                    <strong>North America</strong>
                                     <span class="meta-info">LE2115</span>
                                 </td>
                                 <td class="version-cell" title="LE2115_11_F.30">
@@ -1257,8 +1576,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -1275,10 +1598,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1298,8 +1622,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -1316,10 +1644,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1339,8 +1668,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -1357,12 +1690,16 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
-                                    <strong>NA</strong>
+                                    <strong>North America</strong>
                                     <span class="meta-info">KB2005</span>
                                 </td>
                                 <td class="version-cell" title="KB2005_11_F.67">
@@ -1375,8 +1712,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -1393,10 +1734,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1416,8 +1758,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -1434,12 +1780,16 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
-                                    <strong>NA</strong>
+                                    <strong>North America</strong>
                                     <span class="meta-info">IN2025</span>
                                 </td>
                                 <td class="version-cell" title="IN2025_11_F.67">
@@ -1452,8 +1802,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -1470,10 +1824,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1493,8 +1848,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -1511,12 +1870,16 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
-                                    <strong>NA</strong>
+                                    <strong>North America</strong>
                                     <span class="meta-info">IN2015</span>
                                 </td>
                                 <td class="version-cell" title="IN2015_11_F.67">
@@ -1529,8 +1892,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -1547,13 +1914,36 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
+                            
+                            <tr>
+                                <td>
+                                    <strong>Global</strong>
+                                    <span class="meta-info">HD1913</span>
+                                </td>
+                                <td class="version-cell" title="HD1917_11_F.22">
+                                    HD1917_11_F.22
+                                    <span class="meta-info">Major: 0,&nbsp;Minor: 120</span>
+                                </td>
+                                <td><strong>0</strong></td>
+                                <td>
+                                    
+                                    <span class="badge badge-safe">Safe</span>
+                                    
+                                </td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -1570,8 +1960,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -1588,8 +1982,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -1606,13 +2004,36 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
+                            
+                            <tr>
+                                <td>
+                                    <strong>Global</strong>
+                                    <span class="meta-info">HD1903</span>
+                                </td>
+                                <td class="version-cell" title="HD1905_11_F.22">
+                                    HD1905_11_F.22
+                                    <span class="meta-info">Major: 0,&nbsp;Minor: 120</span>
+                                </td>
+                                <td><strong>0</strong></td>
+                                <td>
+                                    
+                                    <span class="badge badge-safe">Safe</span>
+                                    
+                                </td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -1629,8 +2050,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -1647,8 +2072,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -1665,13 +2094,36 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
+                            
+                            <tr>
+                                <td>
+                                    <strong>Global</strong>
+                                    <span class="meta-info">GM1917</span>
+                                </td>
+                                <td class="version-cell" title="GM1917_11_H.41">
+                                    GM1917_11_H.41
+                                    <span class="meta-info">Major: 0,&nbsp;Minor: 120</span>
+                                </td>
+                                <td><strong>0</strong></td>
+                                <td>
+                                    
+                                    <span class="badge badge-safe">Safe</span>
+                                    
+                                </td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -1688,8 +2140,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -1706,8 +2162,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -1724,13 +2184,36 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
+                            
+                            <tr>
+                                <td>
+                                    <strong>Global</strong>
+                                    <span class="meta-info">GM1905</span>
+                                </td>
+                                <td class="version-cell" title="GM1905_11_H.41">
+                                    GM1905_11_H.41
+                                    <span class="meta-info">Major: 0,&nbsp;Minor: 120</span>
+                                </td>
+                                <td><strong>0</strong></td>
+                                <td>
+                                    
+                                    <span class="badge badge-safe">Safe</span>
+                                    
+                                </td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -1747,8 +2230,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -1765,8 +2252,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -1783,10 +2274,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1806,8 +2298,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -1824,8 +2320,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -1842,8 +2342,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -1860,10 +2364,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1883,8 +2388,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -1901,8 +2410,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -1919,8 +2432,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -1937,10 +2454,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1960,8 +2478,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -1978,8 +2500,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -1996,10 +2522,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -2019,8 +2546,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -2037,10 +2568,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -2060,8 +2592,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -2078,10 +2614,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -2101,8 +2638,12 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -2119,10 +2660,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -2142,8 +2684,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -2160,10 +2706,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -2183,8 +2730,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -2201,10 +2752,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -2224,8 +2776,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -2242,10 +2798,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -2265,8 +2822,12 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -2283,8 +2844,12 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -2301,12 +2866,16 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
-                                    <strong>NA</strong>
+                                    <strong>North America</strong>
                                     <span class="meta-info">OPD2415</span>
                                 </td>
                                 <td class="version-cell" title="OPD2415_15.0.1.500(EX01)">
@@ -2319,8 +2888,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -2337,10 +2910,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -2360,8 +2934,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -2378,10 +2956,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -2401,8 +2980,12 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -2419,8 +3002,12 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -2437,8 +3024,12 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -2455,10 +3046,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -2478,8 +3070,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -2496,10 +3092,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -2519,98 +3116,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
                             
-                            <tr>
-                                <td>
-                                    <strong>MX</strong>
-                                    <span class="meta-info">CPH2671</span>
-                                </td>
-                                <td class="version-cell" title="CPH2671_16.0.1.302(EX01)">
-                                    CPH2671_16.0.1.302(EX01)
-                                    <span class="meta-info">Major: 3,&nbsp;Minor: 0</span>
-                                </td>
-                                <td><strong>0</strong></td>
-                                <td>
-                                    
-                                    <span class="badge badge-safe">Safe</span>
-                                    
-                                </td>
-                                <td>2026-02-04</td>
-                            </tr>
-                            
-                            <tr>
-                                <td>
-                                    <strong>APC</strong>
-                                    <span class="meta-info">CPH2671</span>
-                                </td>
-                                <td class="version-cell" title="CPH2671_16.0.2.401(EX01)">
-                                    CPH2671_16.0.2.401(EX01)
-                                    <span class="meta-info">Major: 3,&nbsp;Minor: 0</span>
-                                </td>
-                                <td><strong>0</strong></td>
-                                <td>
-                                    
-                                    <span class="badge badge-safe">Safe</span>
-                                    
-                                </td>
-                                <td>2026-02-04</td>
-                            </tr>
-                            
-                            <tr>
-                                <td>
-                                    <strong>SG</strong>
-                                    <span class="meta-info">CPH2671</span>
-                                </td>
-                                <td class="version-cell" title="CPH2671_16.0.2.401(EX01)">
-                                    CPH2671_16.0.2.401(EX01)
-                                    <span class="meta-info">Major: 3,&nbsp;Minor: 0</span>
-                                </td>
-                                <td><strong>0</strong></td>
-                                <td>
-                                    
-                                    <span class="badge badge-safe">Safe</span>
-                                    
-                                </td>
-                                <td>2026-02-04</td>
-                            </tr>
-                            
-                            <tr>
-                                <td>
-                                    <strong>TH</strong>
-                                    <span class="meta-info">CPH2671</span>
-                                </td>
-                                <td class="version-cell" title="CPH2671_16.0.2.401(EX01)">
-                                    CPH2671_16.0.2.401(EX01)
-                                    <span class="meta-info">Major: 3,&nbsp;Minor: 0</span>
-                                </td>
-                                <td><strong>0</strong></td>
-                                <td>
-                                    
-                                    <span class="badge badge-safe">Safe</span>
-                                    
-                                </td>
-                                <td>2026-02-04</td>
-                            </tr>
-                            
-                            <tr>
-                                <td>
-                                    <strong>MY</strong>
-                                    <span class="meta-info">CPH2671</span>
-                                </td>
-                                <td class="version-cell" title="CPH2671_16.0.2.401(EX01)">
-                                    CPH2671_16.0.2.401(EX01)
-                                    <span class="meta-info">Major: 3,&nbsp;Minor: 0</span>
-                                </td>
-                                <td><strong>0</strong></td>
-                                <td>
-                                    
-                                    <span class="badge badge-safe">Safe</span>
-                                    
-                                </td>
-                                <td>2026-02-04</td>
-                            </tr>
                             
                             <tr>
                                 <td>
@@ -2627,8 +3138,122 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
+                            
+                            <tr>
+                                <td>
+                                    <strong>SG</strong>
+                                    <span class="meta-info">CPH2671</span>
+                                </td>
+                                <td class="version-cell" title="CPH2671_16.0.2.401(EX01)">
+                                    CPH2671_16.0.2.401(EX01)
+                                    <span class="meta-info">Major: 3,&nbsp;Minor: 0</span>
+                                </td>
+                                <td><strong>0</strong></td>
+                                <td>
+                                    
+                                    <span class="badge badge-safe">Safe</span>
+                                    
+                                </td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            
+                            
+                            <tr>
+                                <td>
+                                    <strong>MY</strong>
+                                    <span class="meta-info">CPH2671</span>
+                                </td>
+                                <td class="version-cell" title="CPH2671_16.0.2.401(EX01)">
+                                    CPH2671_16.0.2.401(EX01)
+                                    <span class="meta-info">Major: 3,&nbsp;Minor: 0</span>
+                                </td>
+                                <td><strong>0</strong></td>
+                                <td>
+                                    
+                                    <span class="badge badge-safe">Safe</span>
+                                    
+                                </td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            
+                            
+                            <tr>
+                                <td>
+                                    <strong>TH</strong>
+                                    <span class="meta-info">CPH2671</span>
+                                </td>
+                                <td class="version-cell" title="CPH2671_16.0.2.401(EX01)">
+                                    CPH2671_16.0.2.401(EX01)
+                                    <span class="meta-info">Major: 3,&nbsp;Minor: 0</span>
+                                </td>
+                                <td><strong>0</strong></td>
+                                <td>
+                                    
+                                    <span class="badge badge-safe">Safe</span>
+                                    
+                                </td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            
+                            
+                            <tr>
+                                <td>
+                                    <strong>APC</strong>
+                                    <span class="meta-info">CPH2671</span>
+                                </td>
+                                <td class="version-cell" title="CPH2671_16.0.2.401(EX01)">
+                                    CPH2671_16.0.2.401(EX01)
+                                    <span class="meta-info">Major: 3,&nbsp;Minor: 0</span>
+                                </td>
+                                <td><strong>0</strong></td>
+                                <td>
+                                    
+                                    <span class="badge badge-safe">Safe</span>
+                                    
+                                </td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            
+                            
+                            <tr>
+                                <td>
+                                    <strong>MX</strong>
+                                    <span class="meta-info">CPH2671</span>
+                                </td>
+                                <td class="version-cell" title="CPH2671_16.0.1.302(EX01)">
+                                    CPH2671_16.0.1.302(EX01)
+                                    <span class="meta-info">Major: 3,&nbsp;Minor: 0</span>
+                                </td>
+                                <td><strong>0</strong></td>
+                                <td>
+                                    
+                                    <span class="badge badge-safe">Safe</span>
+                                    
+                                </td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            
                             
                             
                         </tbody>
@@ -2645,103 +3270,14 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            
-                            <tr>
-                                <td>
-                                    <strong>OCA</strong>
-                                    <span class="meta-info">CPH2499</span>
-                                </td>
-                                <td class="version-cell" title="CPH2499_16.0.0.203(EX01)">
-                                    CPH2499_16.0.0.203(EX01)
-                                    <span class="meta-info">Major: 2,&nbsp;Minor: 0</span>
-                                </td>
-                                <td><strong>0</strong></td>
-                                <td>
-                                    
-                                    <span class="badge badge-safe">Safe</span>
-                                    
-                                </td>
-                                <td>2026-02-04</td>
-                            </tr>
-                            
-                            <tr>
-                                <td>
-                                    <strong>SG</strong>
-                                    <span class="meta-info">CPH2499</span>
-                                </td>
-                                <td class="version-cell" title="CPH2499_16.0.3.500(EX01)">
-                                    CPH2499_16.0.3.500(EX01)
-                                    <span class="meta-info">Major: 2,&nbsp;Minor: 0</span>
-                                </td>
-                                <td><strong>0</strong></td>
-                                <td>
-                                    
-                                    <span class="badge badge-safe">Safe</span>
-                                    
-                                </td>
-                                <td>2026-02-04</td>
-                            </tr>
-                            
-                            <tr>
-                                <td>
-                                    <strong>TW</strong>
-                                    <span class="meta-info">CPH2499</span>
-                                </td>
-                                <td class="version-cell" title="CPH2499_16.0.3.500(EX01)">
-                                    CPH2499_16.0.3.500(EX01)
-                                    <span class="meta-info">Major: 2,&nbsp;Minor: 0</span>
-                                </td>
-                                <td><strong>0</strong></td>
-                                <td>
-                                    
-                                    <span class="badge badge-safe">Safe</span>
-                                    
-                                </td>
-                                <td>2026-02-04</td>
-                            </tr>
-                            
-                            <tr>
-                                <td>
-                                    <strong>TH</strong>
-                                    <span class="meta-info">CPH2499</span>
-                                </td>
-                                <td class="version-cell" title="CPH2499_16.0.3.500(EX01)">
-                                    CPH2499_16.0.3.500(EX01)
-                                    <span class="meta-info">Major: 2,&nbsp;Minor: 0</span>
-                                </td>
-                                <td><strong>0</strong></td>
-                                <td>
-                                    
-                                    <span class="badge badge-safe">Safe</span>
-                                    
-                                </td>
-                                <td>2026-02-04</td>
-                            </tr>
-                            
-                            <tr>
-                                <td>
-                                    <strong>MY</strong>
-                                    <span class="meta-info">CPH2499</span>
-                                </td>
-                                <td class="version-cell" title="CPH2499_16.0.3.500(EX01)">
-                                    CPH2499_16.0.3.500(EX01)
-                                    <span class="meta-info">Major: 2,&nbsp;Minor: 0</span>
-                                </td>
-                                <td><strong>0</strong></td>
-                                <td>
-                                    
-                                    <span class="badge badge-safe">Safe</span>
-                                    
-                                </td>
-                                <td>2026-02-04</td>
-                            </tr>
                             
                             <tr>
                                 <td>
@@ -2758,8 +3294,122 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
+                            
+                            <tr>
+                                <td>
+                                    <strong>SG</strong>
+                                    <span class="meta-info">CPH2499</span>
+                                </td>
+                                <td class="version-cell" title="CPH2499_16.0.3.500(EX01)">
+                                    CPH2499_16.0.3.500(EX01)
+                                    <span class="meta-info">Major: 2,&nbsp;Minor: 0</span>
+                                </td>
+                                <td><strong>0</strong></td>
+                                <td>
+                                    
+                                    <span class="badge badge-safe">Safe</span>
+                                    
+                                </td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            
+                            
+                            <tr>
+                                <td>
+                                    <strong>MY</strong>
+                                    <span class="meta-info">CPH2499</span>
+                                </td>
+                                <td class="version-cell" title="CPH2499_16.0.3.500(EX01)">
+                                    CPH2499_16.0.3.500(EX01)
+                                    <span class="meta-info">Major: 2,&nbsp;Minor: 0</span>
+                                </td>
+                                <td><strong>0</strong></td>
+                                <td>
+                                    
+                                    <span class="badge badge-safe">Safe</span>
+                                    
+                                </td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            
+                            
+                            <tr>
+                                <td>
+                                    <strong>TH</strong>
+                                    <span class="meta-info">CPH2499</span>
+                                </td>
+                                <td class="version-cell" title="CPH2499_16.0.3.500(EX01)">
+                                    CPH2499_16.0.3.500(EX01)
+                                    <span class="meta-info">Major: 2,&nbsp;Minor: 0</span>
+                                </td>
+                                <td><strong>0</strong></td>
+                                <td>
+                                    
+                                    <span class="badge badge-safe">Safe</span>
+                                    
+                                </td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            
+                            
+                            <tr>
+                                <td>
+                                    <strong>TW</strong>
+                                    <span class="meta-info">CPH2499</span>
+                                </td>
+                                <td class="version-cell" title="CPH2499_16.0.3.500(EX01)">
+                                    CPH2499_16.0.3.500(EX01)
+                                    <span class="meta-info">Major: 2,&nbsp;Minor: 0</span>
+                                </td>
+                                <td><strong>0</strong></td>
+                                <td>
+                                    
+                                    <span class="badge badge-safe">Safe</span>
+                                    
+                                </td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            
+                            
+                            <tr>
+                                <td>
+                                    <strong>OCA</strong>
+                                    <span class="meta-info">CPH2499</span>
+                                </td>
+                                <td class="version-cell" title="CPH2499_16.0.0.203(EX01)">
+                                    CPH2499_16.0.0.203(EX01)
+                                    <span class="meta-info">Major: 2,&nbsp;Minor: 0</span>
+                                </td>
+                                <td><strong>0</strong></td>
+                                <td>
+                                    
+                                    <span class="badge badge-safe">Safe</span>
+                                    
+                                </td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -2776,8 +3426,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -2794,10 +3448,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -2817,26 +3472,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
                             
-                            <tr>
-                                <td>
-                                    <strong>OCA</strong>
-                                    <span class="meta-info">CPH2305</span>
-                                </td>
-                                <td class="version-cell" title="CPH2305_11_A.22">
-                                    CPH2305_11_A.22
-                                    <span class="meta-info">Major: 2,&nbsp;Minor: 0</span>
-                                </td>
-                                <td><strong>0</strong></td>
-                                <td>
-                                    
-                                    <span class="badge badge-safe">Safe</span>
-                                    
-                                </td>
-                                <td>2026-02-04</td>
-                            </tr>
                             
                             <tr>
                                 <td>
@@ -2853,8 +3494,34 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
+                            
+                            <tr>
+                                <td>
+                                    <strong>TW</strong>
+                                    <span class="meta-info">CPH2305</span>
+                                </td>
+                                <td class="version-cell" title="CPH2305_15.0.0.1301(EX01)">
+                                    CPH2305_15.0.0.1301(EX01)
+                                    <span class="meta-info">Major: 2,&nbsp;Minor: 0</span>
+                                </td>
+                                <td><strong>0</strong></td>
+                                <td>
+                                    
+                                    <span class="badge badge-safe">Safe</span>
+                                    
+                                </td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -2871,16 +3538,20 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
-                                    <strong>TW</strong>
+                                    <strong>OCA</strong>
                                     <span class="meta-info">CPH2305</span>
                                 </td>
-                                <td class="version-cell" title="CPH2305_15.0.0.1301(EX01)">
-                                    CPH2305_15.0.0.1301(EX01)
+                                <td class="version-cell" title="CPH2305_11_A.22">
+                                    CPH2305_11_A.22
                                     <span class="meta-info">Major: 2,&nbsp;Minor: 0</span>
                                 </td>
                                 <td><strong>0</strong></td>
@@ -2889,8 +3560,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -2907,31 +3582,14 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            
-                            <tr>
-                                <td>
-                                    <strong>Global</strong>
-                                    <span class="meta-info">CPH2307</span>
-                                </td>
-                                <td class="version-cell" title="CPH2307_15.0.0.1304(EX01)">
-                                    CPH2307_15.0.0.1304(EX01)
-                                    <span class="meta-info">Major: 0,&nbsp;Minor: 120</span>
-                                </td>
-                                <td><strong>0</strong></td>
-                                <td>
-                                    
-                                    <span class="badge badge-safe">Safe</span>
-                                    
-                                </td>
-                                <td>2026-02-03</td>
-                            </tr>
                             
                             <tr>
                                 <td>
@@ -2948,62 +3606,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
                             
-                            <tr>
-                                <td>
-                                    <strong>India</strong>
-                                    <span class="meta-info">CPH2307</span>
-                                </td>
-                                <td class="version-cell" title="CPH2307_15.0.0.1304(EX01)">
-                                    CPH2307_15.0.0.1304(EX01)
-                                    <span class="meta-info">Major: 0,&nbsp;Minor: 120</span>
-                                </td>
-                                <td><strong>0</strong></td>
-                                <td>
-                                    
-                                    <span class="badge badge-safe">Safe</span>
-                                    
-                                </td>
-                                <td>2026-02-03</td>
-                            </tr>
-                            
-                            <tr>
-                                <td>
-                                    <strong>SA</strong>
-                                    <span class="meta-info">CPH2307</span>
-                                </td>
-                                <td class="version-cell" title="CPH2307_15.0.0.1302(EX01)">
-                                    CPH2307_15.0.0.1302(EX01)
-                                    <span class="meta-info">Major: 0,&nbsp;Minor: 120</span>
-                                </td>
-                                <td><strong>0</strong></td>
-                                <td>
-                                    
-                                    <span class="badge badge-safe">Safe</span>
-                                    
-                                </td>
-                                <td>2026-02-04</td>
-                            </tr>
-                            
-                            <tr>
-                                <td>
-                                    <strong>OCA</strong>
-                                    <span class="meta-info">CPH2307</span>
-                                </td>
-                                <td class="version-cell" title="CPH2307_15.0.0.1302(EX01)">
-                                    CPH2307_15.0.0.1302(EX01)
-                                    <span class="meta-info">Major: 0,&nbsp;Minor: 120</span>
-                                </td>
-                                <td><strong>0</strong></td>
-                                <td>
-                                    
-                                    <span class="badge badge-safe">Safe</span>
-                                    
-                                </td>
-                                <td>2026-02-04</td>
-                            </tr>
                             
                             <tr>
                                 <td>
@@ -3020,8 +3628,56 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
+                            
+                            <tr>
+                                <td>
+                                    <strong>OCA</strong>
+                                    <span class="meta-info">CPH2307</span>
+                                </td>
+                                <td class="version-cell" title="CPH2307_15.0.0.1302(EX01)">
+                                    CPH2307_15.0.0.1302(EX01)
+                                    <span class="meta-info">Major: 0,&nbsp;Minor: 120</span>
+                                </td>
+                                <td><strong>0</strong></td>
+                                <td>
+                                    
+                                    <span class="badge badge-safe">Safe</span>
+                                    
+                                </td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            
+                            
+                            <tr>
+                                <td>
+                                    <strong>SA</strong>
+                                    <span class="meta-info">CPH2307</span>
+                                </td>
+                                <td class="version-cell" title="CPH2307_15.0.0.1302(EX01)">
+                                    CPH2307_15.0.0.1302(EX01)
+                                    <span class="meta-info">Major: 0,&nbsp;Minor: 120</span>
+                                </td>
+                                <td><strong>0</strong></td>
+                                <td>
+                                    
+                                    <span class="badge badge-safe">Safe</span>
+                                    
+                                </td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            
                             
                             
                         </tbody>
@@ -3038,10 +3694,11 @@
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 15%;">Region</th>
-                                <th scope="col" style="width: 45%;">Version</th>
+                                <th scope="col" style="width: 35%;">Version</th>
                                 <th scope="col" style="width: 10%;">ARB</th>
                                 <th scope="col" style="width: 15%;">Status</th>
                                 <th scope="col" style="width: 15%;">Last Checked</th>
+                                <th scope="col" style="width: 10%;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -3061,8 +3718,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -3079,8 +3740,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             <tr>
                                 <td>
@@ -3097,8 +3762,12 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-02-04</td>
+                                <td>2026-02-05</td>
+                                <td>
+                                    
+                                </td>
                             </tr>
+                            
                             
                             
                         </tbody>
@@ -3117,7 +3786,7 @@
                 &bull;
                 ARB Extraction by <a href="https://github.com/koaaN/arbextract">arbextract</a> (koaaN)
             </div>
-            <p>Last scan: 2026-02-04 01:24 UTC</p>
+            <p>Last scan: 2026-02-05 01:22 UTC</p>
             <p>
                 <a href="https://github.com/Bartixxx32/Oneplus-antirollchecker">View Source on GitHub</a>
                 &bull;
@@ -3125,6 +3794,21 @@
             </p>
         </div>
     </div>
+
+    <script>
+        function toggleHistory(id, btn) {
+            const row = document.getElementById('history-' + id);
+            if (row.classList.contains('active')) {
+                row.classList.remove('active');
+                btn.classList.remove('active');
+                btn.textContent = 'History';
+            } else {
+                row.classList.add('active');
+                btn.classList.add('active');
+                btn.textContent = 'Close';
+            }
+        }
+    </script>
 </body>
 
 </html>

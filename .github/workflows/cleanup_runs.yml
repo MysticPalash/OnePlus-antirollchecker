@@ -16,6 +16,9 @@ jobs:
     permissions:
       actions: write
     steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
       - name: Cleanup Old Runs
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -182,6 +182,19 @@ def generate_readme(history_data: Dict) -> str:
     ])
 
     lines.extend([
+        '## 🔗 OOS Downloader API',
+        '',
+        'Need direct download URLs for OnePlus firmware? Use our **OOS Downloader API**!',
+        '',
+        '🌐 **API Endpoint**: [https://oosdownloader-gui.fly.dev/](https://oosdownloader-gui.fly.dev/)',
+        '',
+        'This API helps you get direct, signed download URLs for OnePlus OTA firmware files.',
+        '',
+        '---',
+        ''
+    ])
+
+    lines.extend([
         '## Credits',
         '',
         '- **Payload Extraction**: [otaripper](https://github.com/syedinsaf/otaripper) by syedinsaf',

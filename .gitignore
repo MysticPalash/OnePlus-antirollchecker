@@ -2,3 +2,18 @@ __pycache__/
 *.pyc
 simulation_output/
 oosdownloader/
+
+# Generated artifacts
+page/
+temp_reference/
+firmware_data/
+fdroid_data/
+extracted/
+tools/
+oplasertool/
+*.img
+*.zip
+*.tar.gz
+result.json
+fw_info.json
+fw_refresh.json

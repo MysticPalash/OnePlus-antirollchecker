@@ -151,6 +151,11 @@ def main():
     
     if is_new:
         print(f"Added new version: {version}")
+        # Write to GITHUB_OUTPUT if available
+        import os
+        if "GITHUB_OUTPUT" in os.environ:
+            with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                f.write("is_new=true\n")
     else:
         print(f"Updated existing version: {version}")
 

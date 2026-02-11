@@ -1,0 +1,145 @@
+name: Telegram On-Demand Check
+
+on:
+  workflow_dispatch:
+    inputs:
+      firmware_url:
+        description: 'Direct Firmware URL to check'
+        required: true
+        type: string
+      request_chat_id:
+        description: 'Telegram Chat ID for reply'
+        required: true
+        type: string
+      request_message_id:
+        description: 'Telegram Message ID to reply to'
+        required: false
+        type: string
+      request_user_name:
+        description: 'User name to mention'
+        required: false
+        type: string
+      request_status_message_id:
+        description: 'Bot status message ID to delete'
+        required: false
+        type: string
+
+jobs:
+  check-firmware:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y aria2 unzip curl python3-pip
+          pip3 install requests beautifulsoup4 --break-system-packages || pip3 install requests beautifulsoup4
+
+      - name: Setup Tools
+        run: |
+          mkdir -p tools
+          
+          # Setup arbextract
+          curl -L -o tools/arbextract https://github.com/koaaN/arbextract/releases/download/1.0/arbextract-x86_64-linux
+          chmod +x tools/arbextract
+          
+          # Setup otaripper
+          curl -L -o otaripper.tar.gz https://github.com/syedinsaf/otaripper/releases/download/v2.1.1/otaripper-2.1.1-linux-static-x86_64.tar.gz
+          tar -xzvf otaripper.tar.gz
+          mv otaripper tools/otaripper || find . -name "otaripper" -type f -exec mv {} tools/otaripper \;
+          chmod +x tools/otaripper
+          
+          # Setup payload-dumper-go (Fallback)
+          curl -L -o pdg.tar.gz https://github.com/ssut/payload-dumper-go/releases/download/1.2.2/payload-dumper-go_1.2.2_linux_amd64.tar.gz
+          tar -xzvf pdg.tar.gz
+          mv payload-dumper-go tools/payload-dumper-go || find . -name "payload-dumper-go" -type f -exec mv {} tools/payload-dumper-go \;
+          chmod +x tools/payload-dumper-go
+
+      - name: Download Firmware
+        id: download
+        continue-on-error: true
+        run: |
+          URL="${{ github.event.inputs.firmware_url }}"
+          echo "Downloading firmware from $URL..."
+          
+          ARIA_CMD="aria2c -c -x16 -s16 -k1M -o firmware.zip"
+          
+          if $ARIA_CMD "$URL"; then
+             echo "Download successful!"
+          else
+             echo "Download failed!"
+             exit 1
+          fi
+
+      - name: Analyze Firmware
+        id: analyze
+        continue-on-error: true
+        run: |
+          python3 analyze_firmware.py firmware.zip \
+            --tools-dir tools \
+            --output-dir extracted \
+            --final-dir firmware_data \
+            --json > result.json
+          
+          cat result.json
+
+      - name: Send Telegram Reply
+        if: always()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.BOTTOKEN }}
+        run: |
+          ERROR_MSG=""
+          
+          if [ "${{ steps.download.outcome }}" == "failure" ]; then
+             ERROR_MSG="❌ Download Failed. Please check the URL or try again later."
+          elif [ "${{ steps.analyze.outcome }}" == "failure" ]; then
+             ERROR_MSG="❌ Analysis Failed. The file might not be a valid OnePlus firmware zip, or XBL/Payload could not be extracted."
+          elif [ ! -f result.json ]; then
+             ERROR_MSG="❌ Analysis Failed. No result file generated."
+          fi
+
+          if [ -z "$ERROR_MSG" ]; then
+              if [ -f result.json ]; then
+                 python3 parse_result.py
+                 
+                 if [ -f fw_env ]; then
+                     source fw_env
+                 else
+                     # Fallback defaults if fw_env missing but no explicit error
+                     DETECTED_DEVICE="Unknown"
+                     DETECTED_PRODUCT="Unknown"
+                     DETECTED_VERSION="Unknown"
+                     DETECTED_PATCH="Unknown"
+                     DETECTED_BUILD="Unknown"
+                     DETECTED_ARB="Error"
+                 fi
+              fi
+              
+              python3 send_telegram.py \
+                --token "$TELEGRAM_BOT_TOKEN" \
+                --chat-id "${{ github.event.inputs.request_chat_id }}" \
+                --device "$DETECTED_DEVICE" \
+                --product "$DETECTED_PRODUCT" \
+                --version "$DETECTED_VERSION" \
+                --security-patch "$DETECTED_PATCH" \
+                --build-id "$DETECTED_BUILD" \
+                --arb "$DETECTED_ARB" \
+                --url "${{ github.event.inputs.firmware_url }}" \
+                --reply-to "${{ github.event.inputs.request_message_id }}" \
+                --user-mention "${{ github.event.inputs.request_user_name }}" \
+                --delete-message-id "${{ github.event.inputs.request_status_message_id }}"
+          else
+              # Send error notification
+              python3 send_telegram.py \
+                --token "$TELEGRAM_BOT_TOKEN" \
+                --chat-id "${{ github.event.inputs.request_chat_id }}" \
+                --device "Error" \
+                --version "Error" \
+                --arb "Error" \
+                --error "$ERROR_MSG" \
+                --reply-to "${{ github.event.inputs.request_message_id }}" \
+                --user-mention "${{ github.event.inputs.request_user_name }}" \
+                --delete-message-id "${{ github.event.inputs.request_status_message_id }}"
+          fi

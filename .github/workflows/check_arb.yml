@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       force_recheck:
-        description: 'Force recheck all firmwares even if already checked'
+        description: 'Force recheck all firmwares'
         required: false
         default: false
         type: boolean
@@ -68,12 +68,7 @@ jobs:
       - name: Get Firmware Details
         id: get_details
         run: |
-          # Unified fetching logic using fetch_firmware.py
-          # It handles OOS API priority and Springer fallback
-          
           echo "Fetching details for ${{ matrix.device }} ${{ matrix.variant }}..."
-          
-          # Use --output file to avoid log contamination in stdout
           python3 fetch_firmware.py "${{ matrix.device }}" "${{ matrix.variant }}" --output fw_info.json
           
           if [ ! -f fw_info.json ]; then
@@ -95,6 +90,8 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "md5=$MD5" >> $GITHUB_OUTPUT
           echo "device_short=${{ matrix.device_short }}" >> $GITHUB_OUTPUT
+          echo "device_name=${{ matrix.device_name }}" >> $GITHUB_OUTPUT
+          echo "variant=${{ matrix.variant }}" >> $GITHUB_OUTPUT
 
       - name: Cache ARB Data
         id: cache-arb
@@ -111,6 +108,12 @@ jobs:
           VERSION="${{ steps.get_details.outputs.version }}"
           MD5="${{ steps.get_details.outputs.md5 }}"
           
+          if [[ "$URL" == "" || "$URL" == "null" ]]; then
+             echo "No URL found."
+             touch skip_check.txt
+             exit 0
+          fi
+
           if [[ "$URL" != *".zip"* && "${{ matrix.variant }}" != "CN" ]]; then
             echo "Skipping non-direct download link: $URL"
             touch skip_check.txt
@@ -213,6 +216,7 @@ jobs:
           cat result.json
 
       - name: Update JSON History (Current Version)
+        id: update_history
         if: hashFiles('result.json') != ''
         run: |
           python3 update_history.py \
@@ -228,7 +232,24 @@ jobs:
           name: result-${{ matrix.device }}-${{ matrix.variant }}
           path: result.json
       
-
+      - name: Send Telegram Notification
+        if: steps.update_history.outputs.is_new == 'true' && env.TELEGRAM_BOT_TOKEN != '' && env.TELEGRAM_CHAT_ID != ''
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.BOTTOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          # Extract ARB from result.json (it is always created by previous steps if we are here)
+          ARB=$(python3 -c "import sys, json; print(json.load(open('result.json')).get('arb_index', 'Unknown'))")
+          
+          python3 send_telegram.py \
+            --token "$TELEGRAM_BOT_TOKEN" \
+            --chat-id "$TELEGRAM_CHAT_ID" \
+            --device "${{ steps.get_details.outputs.device_name }}" \
+            --variant "${{ matrix.variant }}" \
+            --version "${{ steps.get_details.outputs.version }}" \
+            --arb "$ARB" \
+            --md5 "${{ steps.get_details.outputs.md5 }}" \
+            --url "${{ steps.get_details.outputs.url }}"
 
       - name: Upload JSON History
         uses: actions/upload-artifact@v4
@@ -271,12 +292,14 @@ jobs:
           # Generate
           python3 generate_readme.py
           python3 generate_site.py
+          python3 generate_database.py
+          cp data/database.json page/
           
       - name: Commit and Push
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add data/history/*.json README.md
+          git add data/history/*.json README.md data/database.json
           git commit -m "Update ARB history and README" || echo "No changes to commit"
           git push
 

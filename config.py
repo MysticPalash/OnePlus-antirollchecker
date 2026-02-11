@@ -25,7 +25,7 @@ class DeviceMeta(TypedDict):
 DEVICE_ORDER = [
     # Flagships (New)
     "15", "15R", 
-    "13", 
+    "13", "13R", 
     "Open",
     "12", "12R", 
     "11", "11R", 
@@ -82,6 +82,15 @@ DEVICE_METADATA: Dict[str, DeviceMeta] = {
             "IN": "CPH2649",
             "NA": "CPH2655",
             "CN": "PJZ110"
+        },
+    },
+    "13R": {
+        "name": "OnePlus 13R",
+        "models": {
+            "GLO": "CPH2645",
+            "EU": "CPH2645",
+            "IN": "CPH2691",
+            "NA": "CPH2647"
         },
     },
     "12": {
@@ -398,6 +407,7 @@ SPRING_MAPPING = {
     "oneplus_11r": "OP 11R",
     "oneplus_10_pro": "OP 10 PRO",
     "oneplus_13": "OP 13",
+    "oneplus_13r": "OP 13R",
     "oneplus_12": "OP 12",
     "oneplus_12r": "OP ACE 3",
     "oneplus_ace_6t": "OP ACE 6T",
@@ -437,6 +447,7 @@ OOS_MAPPING = {
     "15": "oneplus_15",
     "15R": "oneplus_15r",
     "13": "oneplus_13",
+    "13R": "oneplus_13r",
     "12": "oneplus_12",
     "12R": "oneplus_12r",
     "11": "oneplus_11",

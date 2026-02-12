@@ -3,7 +3,7 @@ from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
 from datetime import datetime, timezone
 import logging
-from config import DEVICE_ORDER, DEVICE_METADATA
+from config import DEVICE_ORDER, DEVICE_METADATA, GOOGLE_ANALYTICS_ID
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -143,7 +143,8 @@ def generate(history_dir: Path, output_dir: Path, template_dir: Path):
     # Render
     output_html = template.render(
         devices=devices,
-        generated_at=datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
+        generated_at=datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC'),
+        ga_id=GOOGLE_ANALYTICS_ID
     )
 
     # Write output

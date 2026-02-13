@@ -34,7 +34,7 @@ Join our Telegram group for support, discussion, and to use the bot.
 | Global | CPH2747 | CPH2747_16.0.3.503(EX01)<br><details><summary>MD5</summary><code>1f617649e2d5d76a5863776bb65100c0</code></details> | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
 | Europe | CPH2747 | CPH2747_16.0.3.503(EX01)<br><details><summary>MD5</summary><code>aead3e10aadb3ff506ae0673a110f8c6</code></details> | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
 | India | CPH2745 | CPH2745_16.0.3.503(EX01)<br><details><summary>MD5</summary><code>e9e6a68cc908913ac7a03578dc41366d</code></details> | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
-| China | PLK110 | PLK110_16.0.3.503(CN01) | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
+| China | PLK110 | PLK110_16.0.3.503(CN01)<br><details><summary>MD5</summary><code>0912b44f2bcc36beec783941e1016c47</code></details> | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
 
 <details>
 <summary>📜 <b>Global History</b> (click to expand)</summary>
@@ -268,7 +268,7 @@ Join our Telegram group for support, discussion, and to use the bot.
 | Europe | CPH2581 | CPH2581_16.0.3.500(EX01)<br><details><summary>MD5</summary><code>3770e5ac2f6e8750d8172ca2788bd36b</code></details> | **1** | Major: 3, Minor: 0 | 2026-02-13 | ❌ |
 | India | CPH2573 | CPH2573_16.0.3.500(EX01)<br><details><summary>MD5</summary><code>54fd9ec64be6d91bb7b68b9c14864033</code></details> | **1** | Major: 3, Minor: 0 | 2026-02-13 | ❌ |
 | NA | CPH2583 | CPH2583_11_C.61<br><details><summary>MD5</summary><code>0930cc879bd35c5c17c3f0e4eb0b014b</code></details> | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
-| China | PJD110 | PJD110_16.0.3.500(CN01) | **1** | Major: 3, Minor: 0 | 2026-02-13 | ❌ |
+| China | PJD110 | PJD110_16.0.3.500(CN01)<br><details><summary>MD5</summary><code>50eb6ea86f6d7b2b9936b477920151aa</code></details> | **1** | Major: 3, Minor: 0 | 2026-02-13 | ❌ |
 
 <details>
 <summary>📜 <b>Global History</b> (click to expand)</summary>
@@ -407,7 +407,7 @@ Join our Telegram group for support, discussion, and to use the bot.
 | Europe | NE2213 | NE2213_16.0.3.500(EX01)<br><details><summary>MD5</summary><code>0602a2e727fc048cf73ad53577013a9a</code></details> | **0** | Major: 2, Minor: 0 | 2026-02-13 | ✅ |
 | India | NE2211 | NE2211_16.0.3.510(EX01)<br><details><summary>MD5</summary><code>6789b9fa5b12cea96885ed118c29cf7b</code></details> | **0** | Major: 2, Minor: 0 | 2026-02-13 | ✅ |
 | NA | NE2215 | NE2215_15.0.0.401(EX01)<br><details><summary>MD5</summary><code>203d379328732fae89f3134e3b808304</code></details> | **0** | Major: 2, Minor: 0 | 2026-02-13 | ✅ |
-| China | NE2210 | NE2210_15.0.0.1301(CN01) | **0** | Major: 2, Minor: 0 | 2026-02-13 | ✅ |
+| China | NE2210 | NE2210_15.0.0.1301(CN01)<br><details><summary>MD5</summary><code>d1b71c63550e15270a3580cf7220e927</code></details> | **0** | Major: 2, Minor: 0 | 2026-02-13 | ✅ |
 
 <details>
 <summary>📜 <b>Global History</b> (click to expand)</summary>
@@ -676,7 +676,7 @@ Join our Telegram group for support, discussion, and to use the bot.
 
 | Region | Model | Firmware Version | ARB Index | OEM Version | Last Checked | Safe |
 |:---|:---|:---|:---|:---|:---|:---|
-| China | PLR110 | PLR110_16.0.3.503(CN01) | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
+| China | PLR110 | PLR110_16.0.3.503(CN01)<br><details><summary>MD5</summary><code>44b826a364824bfc10d0720402b8822f</code></details> | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
 
 <details>
 <summary>📜 <b>China History</b> (click to expand)</summary>
@@ -695,7 +695,7 @@ Join our Telegram group for support, discussion, and to use the bot.
 
 | Region | Model | Firmware Version | ARB Index | OEM Version | Last Checked | Safe |
 |:---|:---|:---|:---|:---|:---|:---|
-| China | PLQ110 | PLQ110_16.0.3.502(CN01) | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
+| China | PLQ110 | PLQ110_16.0.3.502(CN01)<br><details><summary>MD5</summary><code>8a8ea78fe60581d9401cfdf93950fd8a</code></details> | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
 
 ---
 
@@ -703,7 +703,7 @@ Join our Telegram group for support, discussion, and to use the bot.
 
 | Region | Model | Firmware Version | ARB Index | OEM Version | Last Checked | Safe |
 |:---|:---|:---|:---|:---|:---|:---|
-| China | PKR110 | PKR110_16.0.3.500(CN01) | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
+| China | PKR110 | PKR110_16.0.3.500(CN01)<br><details><summary>MD5</summary><code>a29150f57f67b99083f6a4081c468171</code></details> | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
 
 <details>
 <summary>📜 <b>China History</b> (click to expand)</summary>
@@ -722,7 +722,7 @@ Join our Telegram group for support, discussion, and to use the bot.
 
 | Region | Model | Firmware Version | ARB Index | OEM Version | Last Checked | Safe |
 |:---|:---|:---|:---|:---|:---|:---|
-| China | PKG110 | PKG110_16.0.3.500(CN01) | **1** | Major: 3, Minor: 0 | 2026-02-13 | ❌ |
+| China | PKG110 | PKG110_16.0.3.500(CN01)<br><details><summary>MD5</summary><code>d216133625b3690b7e66df13d17fc659</code></details> | **1** | Major: 3, Minor: 0 | 2026-02-13 | ❌ |
 
 <details>
 <summary>📜 <b>China History</b> (click to expand)</summary>
@@ -741,7 +741,7 @@ Join our Telegram group for support, discussion, and to use the bot.
 
 | Region | Model | Firmware Version | ARB Index | OEM Version | Last Checked | Safe |
 |:---|:---|:---|:---|:---|:---|:---|
-| China | PJX110 | PJX110_16.0.1.301(CN01) | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
+| China | PJX110 | PJX110_16.0.1.301(CN01)<br><details><summary>MD5</summary><code>171c22c558cc25e3624419a11a80a420</code></details> | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
 
 <details>
 <summary>📜 <b>China History</b> (click to expand)</summary>
@@ -760,7 +760,7 @@ Join our Telegram group for support, discussion, and to use the bot.
 
 | Region | Model | Firmware Version | ARB Index | OEM Version | Last Checked | Safe |
 |:---|:---|:---|:---|:---|:---|:---|
-| China | PJF110 | PJF110_16.0.1.301(CN01) | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
+| China | PJF110 | PJF110_16.0.1.301(CN01)<br><details><summary>MD5</summary><code>856a520469ed78dce30155893f413617</code></details> | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
 
 <details>
 <summary>📜 <b>China History</b> (click to expand)</summary>
@@ -779,7 +779,7 @@ Join our Telegram group for support, discussion, and to use the bot.
 
 | Region | Model | Firmware Version | ARB Index | OEM Version | Last Checked | Safe |
 |:---|:---|:---|:---|:---|:---|:---|
-| China | PJE110 | PJE110_16.0.1.300(CN01) | **0** | Major: 2, Minor: 0 | 2026-02-13 | ✅ |
+| China | PJE110 | PJE110_16.0.1.300(CN01)<br><details><summary>MD5</summary><code>2133450d657b8accda00dcd97101de80</code></details> | **0** | Major: 2, Minor: 0 | 2026-02-13 | ✅ |
 
 <details>
 <summary>📜 <b>China History</b> (click to expand)</summary>
@@ -840,7 +840,7 @@ Join our Telegram group for support, discussion, and to use the bot.
 
 | Region | Model | Firmware Version | ARB Index | OEM Version | Last Checked | Safe |
 |:---|:---|:---|:---|:---|:---|:---|
-| China | OPD2413 | OPD2413_16.0.3.501(CN01) | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
+| China | OPD2413 | OPD2413_16.0.3.501(CN01)<br><details><summary>MD5</summary><code>7af2eda10018ec1b4c0d66b1df258e55</code></details> | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
 
 <details>
 <summary>📜 <b>China History</b> (click to expand)</summary>
@@ -889,7 +889,7 @@ Join our Telegram group for support, discussion, and to use the bot.
 
 | Region | Model | Firmware Version | ARB Index | OEM Version | Last Checked | Safe |
 |:---|:---|:---|:---|:---|:---|:---|
-| China | PKJ110 | PKJ110_16.0.3.500(CN01) | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
+| China | PKJ110 | PKJ110_16.0.3.500(CN01)<br><details><summary>MD5</summary><code>0f2a5043def5b99ae0903db69d932bff</code></details> | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
 
 <details>
 <summary>📜 <b>China History</b> (click to expand)</summary>
@@ -914,7 +914,7 @@ Join our Telegram group for support, discussion, and to use the bot.
 | TH | CPH2671 | CPH2671_16.0.2.401(EX01)<br><details><summary>MD5</summary><code>d7aa0bf5f0f86e68711f68f2ff8bc7c1</code></details> | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
 | APC | CPH2671 | CPH2671_16.0.2.401(EX01)<br><details><summary>MD5</summary><code>8092cdb0dcf5a44e27ff8b863bbcde89</code></details> | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
 | MX | CPH2671 | CPH2671_16.0.1.302(EX01)<br><details><summary>MD5</summary><code>18d2e0aadec512467ad8f7b38c40d115</code></details> | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
-| China | PKV110 | PKH110_16.0.3.500(CN01) | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
+| China | PKV110 | PKH110_16.0.3.500(CN01)<br><details><summary>MD5</summary><code>0f0d5e5ca45e64af32b99f7401d65a12</code></details> | **0** | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
 
 <details>
 <summary>📜 <b>China History</b> (click to expand)</summary>
@@ -1018,4 +1018,4 @@ This API helps you get direct, signed download URLs for OnePlus OTA firmware fil
 - **ARB Extraction**: [arbextract](https://github.com/koaaN/arbextract) by koaaN
 
 ---
-*Last updated: 2026-02-13 02:49 UTC*
+*Last updated: 2026-02-13 04:41 UTC*

@@ -171,6 +171,7 @@ def generate_readme(history_data: Dict) -> str:
         'Join our Telegram group for support, discussion, and to use the bot.',
         '',
         '- **Group:** [@oneplusarbchecker](https://t.me/oneplusarbchecker)',
+    '- **Discord:** [Join our Server](https://discord.gg/placeholder)',
         '',
         '> **Important:** The bot **only** works within this group to prevent spam and ensure availability. DM checks are disabled.',
         '',

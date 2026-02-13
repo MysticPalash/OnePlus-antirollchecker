@@ -44,6 +44,7 @@ DEVICE_ORDER = [
     
     # China Exclusives (Ace)
     "Ace 6T", 
+    "Ace 6",
     "Ace 5 Pro", "Ace 5", 
     "Ace 3 Pro", "Ace 3V", "Ace 3",
 
@@ -272,6 +273,12 @@ DEVICE_METADATA: Dict[str, DeviceMeta] = {
             "CN": "PLR110"
         },
     },
+    "Ace 6": {
+        "name": "OnePlus Ace 6",
+        "models": {
+            "CN": "PLQ110"
+        },
+    },
     "Ace 5": {
         "name": "OnePlus Ace 5",
         "models": {
@@ -411,6 +418,7 @@ SPRING_MAPPING = {
     "oneplus_12": "OP 12",
     "oneplus_12r": "OP ACE 3",
     "oneplus_ace_6t": "OP ACE 6T",
+    "oneplus_ace_6": "OP ACE 6",
     "oneplus_ace_5": "OP ACE 5",
     "oneplus_ace_5_pro": "OP ACE 5 PRO",
     "oneplus_pad2_pro": "OP PAD2 PRO",
@@ -473,6 +481,7 @@ OOS_MAPPING = {
     "Nord 4": "oneplus_nord_4",
     # Ace
     "Ace 6T": "oneplus_ace_6t",
+    "Ace 6": "oneplus_ace_6",
     "Ace 5": "oneplus_ace_5",
     "Ace 5 Pro": "oneplus_ace_5_pro", 
     "Ace 3 Pro": "oneplus_ace_3_pro",

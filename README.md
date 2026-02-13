@@ -21,6 +21,7 @@ Our Telegram bot allows you to check the Anti-Rollback (ARB) index of any OnePlu
 Join our Telegram group for support, discussion, and to use the bot.
 
 - **Group:** [@oneplusarbchecker](https://t.me/oneplusarbchecker)
+- **Discord:** [Join our Server](https://discord.gg/placeholder)
 
 > **Important:** The bot **only** works within this group to prevent spam and ensure availability. DM checks are disabled.
 
@@ -1009,4 +1010,4 @@ This API helps you get direct, signed download URLs for OnePlus OTA firmware fil
 - **ARB Extraction**: [arbextract](https://github.com/koaaN/arbextract) by koaaN
 
 ---
-*Last updated: 2026-02-12 15:12 UTC*
+*Last updated: 2026-02-13 01:04 UTC*

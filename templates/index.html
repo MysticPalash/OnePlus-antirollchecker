@@ -386,7 +386,18 @@
                                             <tbody>
                                                 {% for entry in variant.history %}
                                                 <tr>
-                                                    <td>{{ entry.version }}</td>
+                                                    <td class="version-cell" title="{{ entry.version }}">
+                                                        {{ entry.version }}
+                                                        {% if entry.md5 %}
+                                                        <details style="margin-top:4px;">
+                                                            <summary
+                                                                style="cursor:pointer; font-size:0.75rem; color:var(--accent-color);">
+                                                                Show MD5</summary>
+                                                            <code
+                                                                style="display:block; font-size:0.7rem; background:#222; padding:4px; border-radius:4px; margin-top:2px; word-break: break-all;">{{ entry.md5 }}</code>
+                                                        </details>
+                                                        {% endif %}
+                                                    </td>
                                                     <td>{{ entry.arb }}</td>
                                                     <td>
                                                         {% if entry.arb == 0 %}

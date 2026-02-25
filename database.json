@@ -105,7 +105,7 @@
           "SA",
           "OCA"
         ],
-        "status": "current"
+        "status": "archived"
       },
       "CPH2307_15.0.0.1304(EX01)": {
         "arb": 0,
@@ -114,6 +114,16 @@
         "minor": 120,
         "regions": [
           "EU"
+        ],
+        "status": "current"
+      },
+      "CPH2307_15.0.0.1600(EX01)": {
+        "arb": 0,
+        "major": 0,
+        "md5": "fe06415c8aa4aad526cb40e776ba9b36",
+        "minor": 120,
+        "regions": [
+          "EG"
         ],
         "status": "current"
       }

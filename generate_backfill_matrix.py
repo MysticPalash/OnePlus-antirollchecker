@@ -8,15 +8,21 @@ from fetch_firmware import get_springer_versions
 def generate_backfill_matrix():
     include_list = []
     
-    # Optional: Filter only specific devices or regions if needed
-    # For now, we'll try all that have Springer mapping
+    target_device = os.environ.get("TARGET_DEVICE", "").strip().lower()
+    target_variant = os.environ.get("TARGET_VARIANT", "").strip().lower()
     
     session = requests.Session()
     
     for device_id, meta in DEVICE_METADATA.items():
+        if target_device and target_device != device_id.lower() and target_device != meta['name'].lower():
+            continue
+            
         valid_regions = meta.get('models', {}).keys()
         
         for region in valid_regions:
+            if target_variant and target_variant != region.lower():
+                continue
+                
             print(f"Checking versions for {device_id} {region}...")
             res = get_springer_versions(device_id, region, session)
             

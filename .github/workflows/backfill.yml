@@ -26,6 +26,9 @@ jobs:
 
       - name: Generate Backfill Matrix
         id: set-matrix
+        env:
+          TARGET_DEVICE: ${{ inputs.device }}
+          TARGET_VARIANT: ${{ inputs.variant }}
         run: |
           # Filter logic can be added to generate_backfill_matrix.py based on inputs if needed
           python3 generate_backfill_matrix.py

@@ -26,7 +26,7 @@ jobs:
       
       - name: Generate Matrix
         id: set-matrix
-        run: python3 generate_matrix.py
+        run: python3 generate_matrix.py --filter-unchanged
 
   prepare-tools:
     runs-on: ubuntu-latest

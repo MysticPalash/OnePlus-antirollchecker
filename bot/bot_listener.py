@@ -3,6 +3,7 @@ import os
 import json
 import time
 import aiohttp
+import html
 from collections import defaultdict
 from datetime import datetime, timezone
 from telegram import Update
@@ -112,17 +113,20 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> N
         user_info = ""
         if isinstance(update, Update):
             if update.effective_chat:
-                chat_info = f"\n📍 Chat: `{update.effective_chat.id}`"
+                chat_info = f"\n📍 Chat: <code>{update.effective_chat.id}</code>"
             if update.effective_user:
-                user_info = f"\n👤 User: {update.effective_user.first_name} (`{update.effective_user.id}`)"
+                name = update.effective_user.first_name
+                name = html.escape(str(name)) if name else "Unknown"
+                user_info = f"\n👤 User: {name} (<code>{update.effective_user.id}</code>)"
         
+        error_text_esc = html.escape(error_text[:500])
         admin_msg = (
-            f"🚨 *Bot Error Alert*\n\n"
+            f"🚨 <b>Bot Error Alert</b>\n\n"
             f"⏰ {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}\n"
             f"{chat_info}{user_info}\n\n"
-            f"❌ `{error_text[:500]}`"
+            f"❌ <code>{error_text_esc}</code>"
         )
-        await context.bot.send_message(chat_id=ADMIN_USER_ID, text=admin_msg, parse_mode="Markdown")
+        await context.bot.send_message(chat_id=ADMIN_USER_ID, text=admin_msg, parse_mode="HTML")
     except Exception as e:
         logging.error(f"Failed to notify admin: {e}")
 
@@ -187,20 +191,21 @@ async def stats(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     # Top 5 users
     sorted_users = sorted(data.get("users", {}).items(), key=lambda x: x[1]["count"], reverse=True)[:5]
+    
     top_users_text = "\n".join(
-        [f"  {i+1}. {u[1]['name']} — {u[1]['count']}" for i, u in enumerate(sorted_users)]
+        [f"  {i+1}. {html.escape(str(u[1]['name']))} — {u[1]['count']}" for i, u in enumerate(sorted_users)]
     ) or "  No data yet"
     
     msg = (
-        f"📊 *Bot Statistics*\n\n"
-        f"🔢 Total checks: *{data.get('total_checks', 0)}*\n"
-        f"❌ Total errors: *{data.get('total_errors', 0)}*\n"
-        f"📅 Today: *{today_count}*\n"
+        f"📊 <b>Bot Statistics</b>\n\n"
+        f"🔢 Total checks: <b>{data.get('total_checks', 0)}</b>\n"
+        f"❌ Total errors: <b>{data.get('total_errors', 0)}</b>\n"
+        f"📅 Today: <b>{today_count}</b>\n"
         f"📆 Since: {data.get('first_check', 'N/A')}\n\n"
-        f"👥 *Top Users:*\n{top_users_text}"
+        f"👥 <b>Top Users:</b>\n{top_users_text}"
     )
     
-    await update.message.reply_text(msg, parse_mode="Markdown")
+    await update.message.reply_text(msg, parse_mode="HTML")
 
 async def check(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Configuration

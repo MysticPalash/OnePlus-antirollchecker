@@ -175,6 +175,11 @@ def generate_readme(history_data: Dict) -> str:
         '',
         '> **Important:** The bot **only** works within this group to prevent spam and ensure availability. DM checks are disabled.',
         '',
+        '### 🍻 Support the Project',
+        'If you find this tool helpful, consider buying me a beer! Your support keeps the updates coming.',
+        '',
+        '<a href="https://www.buymeacoffee.com/bartixxx32"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=bartixxx32&button_colour=FFDD00&font_colour=000000&font_family=Comic&outline_colour=000000&coffee_colour=ffffff" /></a>',
+        '',
         '## 📊 Current Status',
         ''
     ]
@@ -210,7 +215,7 @@ def generate_readme(history_data: Dict) -> str:
     ])
 
     lines.extend([
-        '##  OOS Downloader API',
+        '## 🌐 OOS Downloader API',
         '',
         'Need direct download URLs for OnePlus firmware? Use our **OOS Downloader API**!',
         '',
@@ -226,8 +231,9 @@ def generate_readme(history_data: Dict) -> str:
         '## Credits',
         '',
         '- **Payload Extraction**: [otaripper](https://github.com/syedinsaf/otaripper) by syedinsaf',
-        '- **Fallback Extraction**: [payload-dumper-go](https://github.com/ssut/payload-dumper-go) by ssut',
+        '- **Playback & Validation**: [payload-dumper-go](https://github.com/ssut/payload-dumper-go) by ssut',
         '- **ARB Extraction**: [arbextract](https://github.com/koaaN/arbextract) by koaaN',
+        '- **API for CN variants**: [roms.danielspringer.at](https://roms.danielspringer.at/) by Daniel Springer',
         '',
         '---',
         f'*Last updated: {datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")}*'

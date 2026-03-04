@@ -6,8 +6,8 @@ import aiohttp
 import html
 from collections import defaultdict
 from datetime import datetime, timezone
-from telegram import Update
-from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
+from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
+from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, CallbackQueryHandler
 
 # Configuration
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
@@ -97,6 +97,25 @@ def format_uptime():
     parts.append(f"{seconds}s")
     return " ".join(parts)
 
+DB_URL = "https://oneplusantiroll.netlify.app/database.json"
+
+async def fetch_database():
+    try:
+        async with aiohttp.ClientSession() as session:
+            async with session.get(DB_URL, timeout=10) as response:
+                if response.status == 200:
+                    return await response.json()
+    except Exception as e:
+        logging.error(f"Failed to fetch database.json: {e}")
+    return None
+
+def get_main_keyboard():
+    keyboard = [
+        [InlineKeyboardButton("📱 Device Status", callback_data="cmd_status"), InlineKeyboardButton("🔥 Latest Firmwares", callback_data="cmd_latest")],
+        [InlineKeyboardButton("📥 Download Links", callback_data="cmd_download")]
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
 # --- Handlers ---
 async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Log the error, notify user, and DM admin with details."""
@@ -140,7 +159,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await context.bot.send_message(
         chat_id=update.effective_chat.id,
-        text="Hello! Send /check https://example.com/firmware.zip to analyze a firmware file."
+        text="Hello! Send /check https://example.com/firmware.zip to analyze a firmware file.",
+        reply_markup=get_main_keyboard()
     )
 
 async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -159,7 +179,18 @@ async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "4. Results are posted as a reply\n\n"
         "📋 _Rate limit: 2 checks per minute_"
     )
-    await update.message.reply_text(msg, parse_mode="Markdown")
+    await update.message.reply_text(msg, parse_mode="Markdown", reply_markup=get_main_keyboard())
+
+async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    
+    if query.data == "cmd_status":
+        await query.message.reply_text("📱 Usage: /devicestatus <device_name_or_model>\nExample: /devicestatus OnePlus 12")
+    elif query.data == "cmd_latest":
+        await latest(update, context, is_callback=True)
+    elif query.data == "cmd_download":
+        await download_cmd(update, context, is_callback=True)
 
 async def about(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Show bot info, version, and uptime."""
@@ -206,6 +237,125 @@ async def stats(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     
     await update.message.reply_text(msg, parse_mode="HTML")
+
+async def status_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if update.effective_chat.type == 'private':
+        return
+    
+    if not context.args:
+        await update.message.reply_text("📱 Usage: /devicestatus <device_name_or_model>\nExample: /devicestatus OnePlus 12")
+        return
+        
+    query = " ".join(context.args).lower().strip()
+    data = await fetch_database()
+    if not data:
+        await update.message.reply_text("❌ Failed to fetch database. Try again later.")
+        return
+        
+    found_models = []
+    for model, details in data.items():
+        if query in model.lower() or query in details.get("device_name", "").lower():
+            found_models.append((model, details))
+            
+    if not found_models:
+        await update.message.reply_text(f"❌ No data found for '{query}'.")
+        return
+        
+    text = f"📱 **Search results for '{query}':**\n\n"
+    for model, details in found_models[:3]:
+        device_name = details.get("device_name", model)
+        text += f"*{device_name}* (`{model}`)\n"
+        versions = details.get("versions", {})
+        if not versions:
+            text += "  No firmwares known.\n"
+        else:
+            current_versions = [v for v, v_det in versions.items() if v_det.get('status') == 'current']
+            if not current_versions:
+                current_versions = list(versions.keys())[-3:]
+            for v in current_versions:
+                v_det = versions[v]
+                arb = v_det.get('arb', '?')
+                regions = ", ".join(v_det.get('regions', []))
+                status_icon = "🟢" if arb == 0 else "🔴"
+                text += f"  • `{v}` ({regions}) - ARB: {arb} {status_icon}\n"
+        text += "\n"
+        
+    if len(found_models) > 3:
+        text += f"_...and {len(found_models)-3} more models._\n"
+        
+    await update.message.reply_text(text, parse_mode="Markdown")
+
+async def latest(update: Update, context: ContextTypes.DEFAULT_TYPE, is_callback=False):
+    data = await fetch_database()
+    if not data:
+        msg = "❌ Failed to fetch database."
+        if is_callback:
+            await update.callback_query.message.reply_text(msg)
+        else:
+            await update.message.reply_text(msg)
+        return
+        
+    all_fw = []
+    for model, details in data.items():
+        dev_name = details.get('device_name', model)
+        for v_name, v_det in details.get('versions', {}).items():
+            if v_det.get('status') == 'current':
+                # Use a default old date if first_seen is missing to push it to the bottom
+                first_seen = v_det.get('first_seen') or '2000-01-01'
+                all_fw.append((first_seen, dev_name, v_name, v_det))
+                
+    # Sort by first_seen (descending), then by version name (descending) as tie breaker
+    all_fw.sort(key=lambda x: (x[0], x[2]), reverse=True)
+    
+    text = "🔥 **Latest Discovered Firmwares:**\n\n"
+    for first_seen, dev_name, v_name, v_det in all_fw[:5]:
+        arb = v_det.get('arb', '?')
+        regions = ", ".join(v_det.get('regions', []))
+        status_icon = "🟢" if arb == 0 else "🔴"
+        
+        date_str = ""
+        if first_seen != '2000-01-01':
+            date_str = f" 📅 `{first_seen}`"
+            
+        text += f"📱 *{dev_name}*\n  • `{v_name}` ({regions}) - ARB: {arb} {status_icon}{date_str}\n\n"
+        
+    if is_callback:
+        await update.callback_query.message.reply_text(text, parse_mode="Markdown")
+    else:
+        await update.message.reply_text(text, parse_mode="Markdown")
+
+async def download_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE, is_callback=False):
+    text = (
+        "📥 **Download OnePlus Firmwares**\n\n"
+        "To find direct download links for your device, check our main website index:\n"
+        "👉 [OnePlus ARB Checker](https://oneplusantiroll.netlify.app/)"
+    )
+    if is_callback:
+        await update.callback_query.message.reply_text(text, parse_mode="Markdown", disable_web_page_preview=True)
+    else:
+        await update.message.reply_text(text, parse_mode="Markdown", disable_web_page_preview=True)
+
+async def broadcast(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user = update.effective_user
+    if user.id != ADMIN_USER_ID:
+        return
+        
+    if not context.args:
+        await update.message.reply_text("❌ Usage: /broadcast <message>")
+        return
+        
+    message = " ".join(context.args)
+    ALLOWED_GROUP_ID = -1003662409203
+    try:
+        await context.bot.send_message(
+            chat_id=ALLOWED_GROUP_ID,
+            text=f"📢 **Announcement**\n\n{message}",
+            parse_mode="Markdown"
+        )
+        if update.effective_chat.id != ALLOWED_GROUP_ID:
+            await update.message.reply_text("✅ Broadcast sent successfully!")
+    except Exception as e:
+        await update.message.reply_text(f"❌ Failed to send broadcast: {e}")
 
 async def check(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Configuration
@@ -348,6 +498,15 @@ if __name__ == '__main__':
     application.add_handler(CommandHandler('stats', stats))
     application.add_handler(CommandHandler('help', help_cmd))
     application.add_handler(CommandHandler('about', about))
+    
+    # New commands
+    application.add_handler(CommandHandler('devicestatus', status_cmd))
+    application.add_handler(CommandHandler('latest', latest))
+    application.add_handler(CommandHandler('download', download_cmd))
+    application.add_handler(CommandHandler('broadcast', broadcast))
+    
+    # Callback Query Handler for Inline Keyboards
+    application.add_handler(CallbackQueryHandler(button_handler))
     
     application.add_error_handler(error_handler)
     

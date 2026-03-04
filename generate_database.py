@@ -57,6 +57,7 @@ def generate_database():
                     "major": entry.get("major", -1),
                     "minor": entry.get("minor", -1),
                     "md5": entry.get("md5"),
+                    "first_seen": entry.get("first_seen"),
                     "status": entry.get("status"), # Keep the status from the file (current/archived) - though this might be region specific. 
                                                    # If a version is current in one region and archived in another, this might be ambiguous.
                                                    # But usually the version string is unique enough or we just care about the ARB.

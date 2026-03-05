@@ -267,7 +267,7 @@ async def status_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
         
     text = f"📱 **Search results for '{query}':**\n\n"
-    for model, details in found_models[:3]:
+    for model, details in found_models[:10]:
         device_name = details.get("device_name", model)
         text += f"*{device_name}* (`{model}`)\n"
         versions = details.get("versions", {})
@@ -285,8 +285,8 @@ async def status_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 text += f"  • `{v}` ({regions}) - ARB: {arb} {status_icon}\n"
         text += "\n"
         
-    if len(found_models) > 3:
-        text += f"_...and {len(found_models)-3} more models._\n"
+    if len(found_models) > 10:
+        text += f"_...and {len(found_models)-10} more models._\n"
         
     await update.message.reply_text(text, parse_mode="Markdown")
 

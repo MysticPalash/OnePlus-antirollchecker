@@ -18,7 +18,6 @@ Automated ARB (Anti-Rollback) index tracker for OnePlus devices. This repository
 Our Telegram bot allows you to check the Anti-Rollback (ARB) index of any OnePlus firmware instantly.
 
 - **Bot Username:** [@oparbcheckerbot](https://t.me/oparbcheckerbot)
-- **Group:** [@oneplusarbchecker](https://t.me/oneplusarbchecker)
 - **Supported Commands:**
   - `/check <url>` - Analyze a firmware file (Direct Download Link required)
   - `/download <device> [region]` - Fetch latest firmware & auto-check ARB
@@ -27,7 +26,7 @@ Our Telegram bot allows you to check the Anti-Rollback (ARB) index of any OnePlu
   - `/help` - Show usage instructions
   - `/about` - Bot version and stats
 
-> **Note:** The bot **only** works within the [@oneplusarbchecker](https://t.me/oneplusarbchecker) group. DM checks are disabled. Checks are powered by GitHub Actions and may take a minute to process.
+> **Note:** The bot is powered by GitHub Actions. Checks may take a minute to process.
 
 ### 🍻 Support the Project
 If you find this tool helpful, consider buying me a beer! Your support keeps the updates coming.
@@ -1176,4 +1175,4 @@ Prefer a native mobile experience? We have an official Android app on F-Droid! C
 > **Important:** The bot **only** works within this group to prevent spam and ensure availability. DM checks are disabled.
 
 ---
-*Last updated: 2026-03-04 22:36 UTC*
+*Last updated: 2026-03-04 22:16 UTC*

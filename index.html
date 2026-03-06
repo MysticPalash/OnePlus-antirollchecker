@@ -272,6 +272,25 @@
             color: white;
         }
 
+        .badges-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin: 20px 0;
+        }
+
+        .badges-container img {
+            display: block;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .badges-container a:hover img {
+            opacity: 0.85;
+            transform: translateY(-1px);
+        }
+
         .search-container {
             margin-top: 20px;
             text-align: center;
@@ -294,14 +313,47 @@
             border-color: var(--accent-color);
             box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.2);
         }
+
+        /* Floating Buy Me a Coffee Button */
+        .floating-bmc {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .floating-bmc:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .floating-bmc {
+                top: auto;
+                bottom: 15px;
+                right: 15px;
+            }
+
+            body {
+                padding-bottom: 60px;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <!-- Floating Buy Me a Coffee Button -->
+    <a href="https://www.buymeacoffee.com/bartixxx32" target="_blank" class="floating-bmc">
+        <img src="https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20beer&emoji=🍺&slug=bartixxx32&button_colour=FFDD00&font_colour=000000&font_family=Comic&outline_colour=000000&coffee_colour=ffffff"
+            alt="Buy Me A Coffee"
+            style="height: 45px !important;width: auto !important; border-radius: 8px; box-shadow: 0px 4px 10px rgba(0,0,0,0.5);">
+    </a>
+
     <div class="container">
         <header>
             <h1>OnePlus ARB Checker</h1>
             <p class="subtitle">Real-time Anti-Rollback (ARB) index tracking for OnePlus devices</p>
+
             <div class="search-container">
                 <input type="text" id="search-input" placeholder="🔍 Search devices (e.g. OnePlus 15, Nord)..."
                     onkeyup="filterDevices()">
@@ -351,7 +403,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -478,7 +530,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -605,7 +657,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -755,7 +807,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -929,7 +981,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -1033,7 +1085,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -1114,7 +1166,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -1265,7 +1317,7 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -1415,7 +1467,7 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -1565,7 +1617,7 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -1715,7 +1767,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -1796,7 +1848,7 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -1970,7 +2022,7 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -2120,7 +2172,7 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -2270,7 +2322,7 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -2444,7 +2496,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -2632,7 +2684,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -2759,7 +2811,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -2813,7 +2865,7 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -2963,7 +3015,7 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -3113,7 +3165,7 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -3263,7 +3315,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -3293,7 +3345,7 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -3467,7 +3519,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -3548,7 +3600,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -3629,7 +3681,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -3659,7 +3711,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -3713,7 +3765,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -3886,7 +3938,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -4082,7 +4134,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -4270,7 +4322,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -4324,7 +4376,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -4521,7 +4573,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -4694,7 +4746,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -4867,7 +4919,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -5040,7 +5092,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -5070,7 +5122,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -5244,7 +5296,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -5325,7 +5377,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -5406,7 +5458,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -5479,7 +5531,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -5533,7 +5585,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -5563,7 +5615,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -5593,7 +5645,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -5647,7 +5699,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -5677,7 +5729,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -5707,7 +5759,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -5761,7 +5813,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -5815,7 +5867,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -5845,7 +5897,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -5875,7 +5927,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -5929,7 +5981,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -5959,7 +6011,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -5989,7 +6041,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -6043,7 +6095,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -6073,7 +6125,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -6103,7 +6155,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -6157,7 +6209,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -6187,7 +6239,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -6217,7 +6269,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -6271,7 +6323,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -6301,7 +6353,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -6331,7 +6383,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -6385,7 +6437,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -6415,7 +6467,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -6445,7 +6497,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -6499,7 +6551,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -6529,7 +6581,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -6559,7 +6611,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -6613,7 +6665,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -6717,7 +6769,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -6821,7 +6873,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -6875,7 +6927,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -7002,7 +7054,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -7152,7 +7204,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -7303,7 +7355,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -7333,7 +7385,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -7387,7 +7439,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -7561,7 +7613,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -7735,7 +7787,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -7909,7 +7961,7 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -8083,7 +8135,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -8234,7 +8286,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -8362,7 +8414,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -8513,7 +8565,7 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -8617,7 +8669,7 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -8721,7 +8773,7 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -8825,7 +8877,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -8879,7 +8931,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -9030,7 +9082,7 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -9060,7 +9112,7 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -9141,7 +9193,7 @@
                                     <span class="badge badge-danger">Protected</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -9269,7 +9321,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -9443,7 +9495,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -9473,7 +9525,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -9503,7 +9555,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -9533,7 +9585,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -9563,7 +9615,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -9593,7 +9645,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -9623,7 +9675,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -9797,7 +9849,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -9827,7 +9879,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -9857,7 +9909,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -9887,7 +9939,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -9917,7 +9969,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -9947,7 +9999,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -9977,7 +10029,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -10082,7 +10134,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -10112,7 +10164,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -10193,7 +10245,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -10223,7 +10275,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -10253,7 +10305,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -10307,7 +10359,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -10388,7 +10440,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -10469,7 +10521,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -10550,7 +10602,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                     <button class="toggle-history"
@@ -10655,7 +10707,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -10685,7 +10737,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -10715,7 +10767,7 @@
                                     <span class="badge badge-safe">Safe</span>
                                     
                                 </td>
-                                <td>2026-03-05</td>
+                                <td>2026-03-06</td>
                                 <td>
                                     
                                 </td>
@@ -10731,6 +10783,17 @@
         </div>
 
         <div class="footer">
+            <div
+                style="background-color: var(--card-bg); border: 1px solid #FFDD00; border-radius: 8px; padding: 20px; margin-bottom: 20px; text-align: center;">
+                <h3 style="margin: 0 0 10px 0; color: #FFDD00; font-size: 1.1rem;">🍻 Support the Project</h3>
+                <p style="margin: 0 0 15px 0; font-size: 0.95rem;">
+                    If you find this tool helpful, consider buying me a beer! Your support keeps the updates coming.
+                </p>
+                <a href="https://www.buymeacoffee.com/bartixxx32" target="_blank" style="display: inline-block;">
+                    <img src="https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20beer&emoji=🍺&slug=bartixxx32&button_colour=FFDD00&font_colour=000000&font_family=Comic&outline_colour=000000&coffee_colour=ffffff"
+                        alt="Buy Me A Coffee" style="height: 40px !important;width: auto !important;">
+                </a>
+            </div>
             <div
                 style="background-color: var(--card-bg); border: 1px solid #0088cc; border-radius: 8px; padding: 20px; margin-bottom: 20px;">
                 <h3 style="margin: 0 0 10px 0; color: #0088cc; font-size: 1.1rem;">💬 Telegram Bot</h3>
@@ -10764,15 +10827,60 @@
                     Get direct, signed download URLs for OnePlus OTA firmware files.
                 </p>
             </div>
+            <div
+                style="background-color: var(--card-bg); border: 1px solid var(--accent-color); border-radius: 8px; padding: 20px; margin-bottom: 30px; text-align: center;">
+                <h3 style="margin: 0 0 15px 0; color: var(--accent-color); font-size: 1.1rem;">📱 Official Android App
+                </h3>
+                <a href="https://f-droid.org/pl/packages/com.bartixxx.oneplusarbchecker/" target="_blank"
+                    rel="noopener noreferrer">
+                    <img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="60"
+                        style="transition: transform 0.2s; border-radius: 8px;"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </a>
+                <p style="margin: 15px 0 0 0; font-size: 0.95rem; color: var(--text-muted);">
+                    Check firmware statuses, view ARB indices, and stay protected directly from your phone!
+                </p>
+            </div>
             <div style="margin-bottom: 20px; font-size: 0.85em;">
                 <strong>Credits:</strong>
                 Payload Extraction by <a href="https://github.com/syedinsaf/otaripper">otaripper</a> (syedinsaf)
                 &bull;
-                Fallback by <a href="https://github.com/ssut/payload-dumper-go">payload-dumper-go</a> (ssut)
+                Playback & Validation by <a href="https://github.com/ssut/payload-dumper-go">payload-dumper-go</a>
+                (ssut)
                 &bull;
                 ARB Extraction by <a href="https://github.com/koaaN/arbextract">arbextract</a> (koaaN)
+                &bull;
+                API for CN variants by <a href="https://roms.danielspringer.at/">roms.danielspringer.at</a> (Daniel
+                Springer)
             </div>
-            <p>Last scan: 2026-03-05 01:06 UTC</p>
+
+            <div class="badges-container">
+                <a href="https://github.com/Bartixxx32/OnePlus-antirollchecker/actions/workflows/check_arb.yml"
+                    target="_blank" rel="noopener noreferrer">
+                    <img src="https://img.shields.io/github/actions/workflow/status/Bartixxx32/OnePlus-antirollchecker/check_arb.yml?style=flat-square&logo=github&label=ARB%20Checking"
+                        alt="GitHub Workflow Status">
+                </a>
+                <a href="https://github.com/Bartixxx32/OnePlus-antirollchecker/stargazers" target="_blank"
+                    rel="noopener noreferrer">
+                    <img src="https://img.shields.io/github/stars/Bartixxx32/OnePlus-antirollchecker?style=flat-square&color=yellow"
+                        alt="GitHub stars">
+                </a>
+                <a href="https://github.com/Bartixxx32/OnePlus-antirollchecker/network/members" target="_blank"
+                    rel="noopener noreferrer">
+                    <img src="https://img.shields.io/github/forks/Bartixxx32/OnePlus-antirollchecker?style=flat-square"
+                        alt="GitHub forks">
+                </a>
+                <a href="https://github.com/Bartixxx32/OnePlus-antirollchecker/commits/main" target="_blank"
+                    rel="noopener noreferrer">
+                    <img src="https://img.shields.io/github/last-commit/Bartixxx32/OnePlus-antirollchecker?style=flat-square"
+                        alt="GitHub last commit">
+                </a>
+                <img src="https://img.shields.io/badge/Python-3.11+-blue?style=flat-square&logo=python"
+                    alt="Python Version">
+                <img src="https://visitor-badge.laobi.icu/badge?page_id=Bartixxx32.OnePlus-antirollchecker" alt="Views">
+            </div>
+
+            <p>Last scan: 2026-03-06 01:10 UTC</p>
             <p>
                 <a href="https://github.com/Bartixxx32/Oneplus-antirollchecker">View Source on GitHub</a>
                 &bull;

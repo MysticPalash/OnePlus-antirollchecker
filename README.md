@@ -264,6 +264,8 @@ If you find this tool helpful, consider buying me a beer! Your support keeps the
 
 | Firmware Version | ARB | OEM Version | Last Seen | Safe |
 |:---|:---|:---|:---|:---|
+| PKX110_16.0.3.501(CN01)<br><details><summary>MD5</summary><code>4b08985d35a0fa74c5041ac96d5efb0b</code></details> | 1 | Major: 3, Minor: 0 | 2026-03-10 | ❌ |
+| PKX110_16.0.2.400(CN01)<br><details><summary>MD5</summary><code>9e24382675ed8ca6fede1da4b69043f7</code></details> | 0 | Major: 3, Minor: 0 | 2026-03-10 | ✅ |
 | PKX110_16.0.1.301(CN01)<br><details><summary>MD5</summary><code>77b376681c8ac0a7a4d1a65e0a6b12f5</code></details> | 0 | Major: 3, Minor: 0 | 2026-03-10 | ✅ |
 | PKX110_16.0.0.213(CN01)<br><details><summary>MD5</summary><code>e6d61fc87ad841d90922b0703ea79d14</code></details> | 0 | Major: 3, Minor: 0 | 2026-03-10 | ✅ |
 
@@ -817,7 +819,7 @@ If you find this tool helpful, consider buying me a beer! Your support keeps the
 
 | Firmware Version | ARB | OEM Version | Last Seen | Safe |
 |:---|:---|:---|:---|:---|
-| PLR110_16.0.3.501(CN01)<br><details><summary>MD5</summary><code>adc7d4b44fd3c7dcb0bea4a13c78e098</code></details> | 0 | Major: 3, Minor: 0 | 2026-02-26 | ✅ |
+| PLR110_16.0.3.501(CN01)<br><details><summary>MD5</summary><code>adc7d4b44fd3c7dcb0bea4a13c78e098</code></details> | 0 | Major: 3, Minor: 0 | 2026-03-10 | ✅ |
 | PLR110_16.0.1.308(CN01)<br><details><summary>MD5</summary><code>6849eca4f011cbfc58b340dff6f6a434</code></details> | 0 | Major: 3, Minor: 0 | 2026-02-25 | ✅ |
 | PLR110_16.0.2.402(CN01)<br><details><summary>MD5</summary><code>273266741cdbcad2217c4c3d256a1853</code></details> | 0 | Major: 3, Minor: 0 | 2026-02-13 | ✅ |
 | PLR110_16.0.2.403(CN01)<br><details><summary>MD5</summary><code>aced29f4184f9065781679b9008375f9</code></details> | 0 | Major: 3, Minor: 0 | 2026-02-04 | ✅ |
@@ -1262,4 +1264,4 @@ Prefer a native mobile experience? We have an official Android app on F-Droid! C
 > **Important:** The bot **only** works within this group to prevent spam and ensure availability. DM checks are disabled.
 
 ---
-*Last updated: 2026-03-10 14:54 UTC*
+*Last updated: 2026-03-10 17:24 UTC*

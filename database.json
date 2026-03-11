@@ -2905,6 +2905,17 @@
         "regions": [
           "CN"
         ],
+        "status": "archived"
+      },
+      "PLK110_16.0.5.701(CN01)": {
+        "arb": 0,
+        "first_seen": "2026-03-11",
+        "major": 3,
+        "md5": "9e9688532ff5ec1eb19b4ca9de363199",
+        "minor": 0,
+        "regions": [
+          "CN"
+        ],
         "status": "current"
       }
     }

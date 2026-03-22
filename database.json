@@ -686,7 +686,10 @@
         "md5": "c7978bb9b21f5ab05179ce1957e1e7fa",
         "minor": 0,
         "regions": [
-          "ID"
+          "ID",
+          "TH",
+          "SG",
+          "VN"
         ],
         "status": "current"
       }
@@ -1018,7 +1021,8 @@
         "md5": "992c3916a53a72e8e0b7449a60e5c83f",
         "minor": 0,
         "regions": [
-          "IN"
+          "IN",
+          "EU"
         ],
         "status": "current"
       }

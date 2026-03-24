@@ -681,13 +681,15 @@
       },
       "CPH2499_16.0.3.505(EX01)": {
         "arb": 0,
-        "first_seen": "2026-03-18",
+        "first_seen": "2026-03-24",
         "major": 2,
-        "md5": "c7978bb9b21f5ab05179ce1957e1e7fa",
+        "md5": "9bfc00e1335a3f6dab6ccdeacf242d65",
         "minor": 0,
         "regions": [
+          "TW",
           "ID",
           "TH",
+          "MY",
           "SG",
           "VN"
         ],
@@ -1096,6 +1098,17 @@
         "first_seen": "2026-02-04",
         "major": 3,
         "md5": "54fd9ec64be6d91bb7b68b9c14864033",
+        "minor": 0,
+        "regions": [
+          "IN"
+        ],
+        "status": "archived"
+      },
+      "CPH2573_16.0.5.702(EX01)": {
+        "arb": 1,
+        "first_seen": "2026-03-24",
+        "major": 3,
+        "md5": "a599a8f3fdbd426588b8f544c5b19fa3",
         "minor": 0,
         "regions": [
           "IN"
@@ -1605,6 +1618,17 @@
         "regions": [
           "IN"
         ],
+        "status": "archived"
+      },
+      "CPH2661_16.0.5.701(EX01)": {
+        "arb": 0,
+        "first_seen": "2026-03-24",
+        "major": 3,
+        "md5": "6352d9d637f01ddfb574d13c412c3cae",
+        "minor": 0,
+        "regions": [
+          "IN"
+        ],
         "status": "current"
       }
     }
@@ -1777,6 +1801,17 @@
         "first_seen": "2026-02-11",
         "major": 3,
         "md5": "7052fdc3ef6ba695876c463e220b0666",
+        "minor": 0,
+        "regions": [
+          "IN"
+        ],
+        "status": "archived"
+      },
+      "CPH2691_16.0.5.701(EX01)": {
+        "arb": 1,
+        "first_seen": "2026-03-24",
+        "major": 3,
+        "md5": "6e491c496b73deea2dc834cd5f460d8b",
         "minor": 0,
         "regions": [
           "IN"
@@ -2887,6 +2922,17 @@
           "GLO"
         ],
         "status": "current"
+      },
+      "OPD2403_16.0.5.701(EX01)": {
+        "arb": 1,
+        "first_seen": "2026-03-24",
+        "major": 3,
+        "md5": "81159aae331be32f00155760c8b14b14",
+        "minor": 0,
+        "regions": [
+          "IN"
+        ],
+        "status": "current"
       }
     }
   },
@@ -3317,6 +3363,17 @@
         "regions": [
           "CN"
         ],
+        "status": "archived"
+      },
+      "PKG110_16.0.5.701(CN01)": {
+        "arb": 1,
+        "first_seen": "2026-03-24",
+        "major": 3,
+        "md5": "9e846bf2d37cfc10168757bbf98f9606",
+        "minor": 0,
+        "regions": [
+          "CN"
+        ],
         "status": "current"
       }
     }
@@ -3433,6 +3490,17 @@
         "first_seen": "2026-02-04",
         "major": 3,
         "md5": "a29150f57f67b99083f6a4081c468171",
+        "minor": 0,
+        "regions": [
+          "CN"
+        ],
+        "status": "archived"
+      },
+      "PKR110_16.0.5.700(CN01)": {
+        "arb": 0,
+        "first_seen": "2026-03-24",
+        "major": 3,
+        "md5": "1032105ab6780803db30bfb1ceaf8cff",
         "minor": 0,
         "regions": [
           "CN"

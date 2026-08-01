@@ -1,13 +1,23 @@
 {
   "history": [
     {
+      "version": "PKU110_16.0.9.401(CN01)",
+      "arb": 0,
+      "major": 3,
+      "minor": 0,
+      "first_seen": "2026-08-01",
+      "last_checked": "2026-08-01",
+      "status": "current",
+      "md5": "0e9d216b4634a117eec5f0e66d889fef"
+    },
+    {
       "version": "PKU110_16.0.9.400(CN01)",
       "arb": 0,
       "major": 3,
       "minor": 0,
       "first_seen": "2026-07-09",
       "last_checked": "2026-07-28",
-      "status": "current",
+      "status": "archived",
       "md5": "a03c8ef2d0f66b86674a0761d754da8b"
     },
     {

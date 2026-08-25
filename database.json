@@ -381,7 +381,7 @@
         "minor": 0,
         "md5": "1a8f7ad9d729ca7868003c3f39920af5",
         "first_seen": "2026-07-29",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -456,7 +456,7 @@
         "minor": 0,
         "md5": "a64fed2576347ece7c224a39eb675509",
         "first_seen": "2026-07-29",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -572,7 +572,7 @@
         "minor": 0,
         "md5": "c0debf3a37dea71b0155a97781de08b4",
         "first_seen": "2026-02-04",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "archived",
         "is_hardcoded": false,
         "regions": [
@@ -713,7 +713,7 @@
         "minor": 0,
         "md5": "54cc417e44e221c6960e4a6446c56cd0",
         "first_seen": "2026-02-04",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "archived",
         "is_hardcoded": false,
         "regions": [
@@ -813,7 +813,7 @@
         "minor": 120,
         "md5": "1b08a7373453ff410e89698ec1629089",
         "first_seen": "2026-05-26",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": true,
         "regions": [
@@ -903,7 +903,7 @@
         "minor": 120,
         "md5": "05e595476654d5cd3bf0e23007f460f2",
         "first_seen": "2026-08-04",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": true,
         "regions": [
@@ -1026,7 +1026,7 @@
         "minor": 0,
         "md5": "ab372586fbb439bad1e8cfa19dfee40f",
         "first_seen": "2026-02-04",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "archived",
         "is_hardcoded": false,
         "regions": [
@@ -2016,7 +2016,7 @@
         "minor": 0,
         "md5": "be0d692d2a721243f48599214da8f4b1",
         "first_seen": "2026-07-23",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -2172,7 +2172,7 @@
         "minor": 120,
         "md5": "243631c13291e64994eb63bb97e2602b",
         "first_seen": "2026-08-12",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": true,
         "regions": [
@@ -2224,6 +2224,19 @@
     "device_name": "OnePlus 12",
     "device_order": 7,
     "versions": {
+      "CPH2573_16.0.10.501(EX01)": {
+        "arb": 1,
+        "major": 3,
+        "minor": 0,
+        "md5": "70f517062350e61dbc1d4a843f568056",
+        "first_seen": "2026-08-25",
+        "last_checked": "2026-08-25",
+        "status": "current",
+        "is_hardcoded": false,
+        "regions": [
+          "IN"
+        ]
+      },
       "CPH2573_16.0.9.400(EX01)": {
         "arb": 1,
         "major": 3,
@@ -2231,7 +2244,7 @@
         "md5": "17af17165e4d01ab2293d56725775ac2",
         "first_seen": "2026-07-21",
         "last_checked": "2026-08-24",
-        "status": "current",
+        "status": "archived",
         "is_hardcoded": false,
         "regions": [
           "IN"
@@ -2353,7 +2366,7 @@
         "minor": 0,
         "md5": "9b2d3db3fe4e7d9fc37706f03c4129fc",
         "first_seen": "2026-07-29",
-        "last_checked": "2026-08-22",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -2738,7 +2751,7 @@
         "minor": 120,
         "md5": "a67530e256b5bde05acf4219933e596d",
         "first_seen": "2026-06-30",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": true,
         "regions": [
@@ -2838,7 +2851,7 @@
         "minor": 0,
         "md5": "62695bbacbf3641df51d90153dc54ca5",
         "first_seen": "2026-07-29",
-        "last_checked": "2026-08-22",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -2969,7 +2982,7 @@
         "minor": 0,
         "md5": "32b8fa2cd3cc2d8e5ff1b7411211529a",
         "first_seen": "2026-08-18",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -3302,7 +3315,7 @@
         "minor": 0,
         "md5": "7d0ce94be24263393454ae140889a523",
         "first_seen": "2026-02-04",
-        "last_checked": "2026-08-22",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -3334,7 +3347,7 @@
         "minor": 0,
         "md5": "0e1d8a680e0c7d1b9bac3e5aa427b85f",
         "first_seen": "2026-07-10",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -3444,7 +3457,7 @@
         "minor": 0,
         "md5": "4f65299c05bcf4e9c1201d85877db742",
         "first_seen": "2026-07-12",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -3804,7 +3817,7 @@
         "minor": 0,
         "md5": "53fc8f372873c69fdf9b40dc14452586",
         "first_seen": "2026-08-19",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -3965,7 +3978,7 @@
         "minor": 0,
         "md5": "ebcccb0ea41bfe82c70b31f61342cc04",
         "first_seen": "2026-08-20",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -4114,7 +4127,7 @@
         "minor": 0,
         "md5": "27466b035e8a04bc244aafcb38c88ee2",
         "first_seen": "2026-08-15",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -4408,7 +4421,7 @@
         "minor": 0,
         "md5": "c097d766c3b13cec60b1b076fdf2be3e",
         "first_seen": "2026-08-20",
-        "last_checked": "2026-08-22",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -4531,7 +4544,7 @@
         "minor": 0,
         "md5": "dec4a1753e117fb9fdff8a7cfd22eaa5",
         "first_seen": "2026-07-23",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -5199,7 +5212,7 @@
         "minor": 0,
         "md5": "53e8751e9ce8ad0f1a1fafa289ee53ac",
         "first_seen": "2026-06-17",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -5387,7 +5400,7 @@
         "minor": 0,
         "md5": "ba2bc492a059033a1bbc5ac30cdea645",
         "first_seen": "2026-07-29",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -5419,7 +5432,7 @@
         "minor": 0,
         "md5": "99740e725992488be490b2686c0bddc6",
         "first_seen": "2026-07-04",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -5503,7 +5516,7 @@
         "minor": 0,
         "md5": "0a219c952c05649ac12dc46934bfc697",
         "first_seen": "2026-07-29",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -5569,7 +5582,7 @@
         "minor": 0,
         "md5": "0a1df6596f371b7bbd675e7496058880",
         "first_seen": "2026-07-29",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -5661,7 +5674,7 @@
         "minor": 0,
         "md5": "c7d36364f94daa509c19f71b1e100982",
         "first_seen": "2026-07-15",
-        "last_checked": "2026-07-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -5991,7 +6004,7 @@
         "minor": 0,
         "md5": "fd1b0301a17e416e4eab063ec082ac68",
         "first_seen": "2026-07-24",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -6075,7 +6088,7 @@
         "minor": 0,
         "md5": "0539d2c86f1cdf01ed5c0d63d5f30498",
         "first_seen": "2026-08-12",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -6146,7 +6159,7 @@
         "minor": 0,
         "md5": "12acd5d1b01dc3a03fec06a9a4f1a9c3",
         "first_seen": "2026-07-31",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -6386,6 +6399,19 @@
     "device_name": "OnePlus Ace 5",
     "device_order": 38,
     "versions": {
+      "PKG110_16.0.10.500(CN01)": {
+        "arb": 1,
+        "major": 3,
+        "minor": 0,
+        "md5": "91661e97ec24bbfa08f3198530abdb02",
+        "first_seen": "2026-08-25",
+        "last_checked": "2026-08-25",
+        "status": "current",
+        "is_hardcoded": false,
+        "regions": [
+          "CN"
+        ]
+      },
       "PKG110_16.0.9.400(CN01)": {
         "arb": 1,
         "major": 3,
@@ -6393,7 +6419,7 @@
         "md5": "6fb0095cc9c07dbdb74074c87cbb643f",
         "first_seen": "2026-07-17",
         "last_checked": "2026-08-17",
-        "status": "current",
+        "status": "archived",
         "is_hardcoded": false,
         "regions": [
           "CN"
@@ -6528,7 +6554,7 @@
         "minor": 0,
         "md5": "091269146c51db71da082907c39813ef",
         "first_seen": "2026-08-12",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -6664,7 +6690,7 @@
         "minor": 0,
         "md5": "f08ebc8857b31c98d9565c3542c82b3f",
         "first_seen": "2026-08-22",
-        "last_checked": "2026-08-22",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -6813,7 +6839,7 @@
         "minor": 0,
         "md5": "b8b3645ad387e7bab961909a3e352518",
         "first_seen": "2026-08-12",
-        "last_checked": "2026-08-24",
+        "last_checked": "2026-08-25",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -6930,6 +6956,19 @@
     "device_name": "OnePlus 13T",
     "device_order": 4,
     "versions": {
+      "PKX110_16.0.10.500(CN01)": {
+        "arb": 1,
+        "major": 3,
+        "minor": 0,
+        "md5": "918612b11b727fb05d9c6190ce1cd8d1",
+        "first_seen": "2026-08-25",
+        "last_checked": "2026-08-25",
+        "status": "current",
+        "is_hardcoded": false,
+        "regions": [
+          "CN"
+        ]
+      },
       "PKX110_16.0.9.401(CN01)": {
         "arb": 1,
         "major": 3,
@@ -6937,7 +6976,7 @@
         "md5": "782c1416f4fb1a3b7d52e98c483789e0",
         "first_seen": "2026-07-31",
         "last_checked": "2026-07-31",
-        "status": "current",
+        "status": "archived",
         "is_hardcoded": false,
         "regions": [
           "CN"
@@ -7215,6 +7254,19 @@
     "device_name": "OnePlus Ace 6",
     "device_order": 36,
     "versions": {
+      "PLQ110_16.0.10.500(CN01)": {
+        "arb": 1,
+        "major": 3,
+        "minor": 0,
+        "md5": "426959f59655e11efc126bc788a9a77f",
+        "first_seen": "2026-08-25",
+        "last_checked": "2026-08-25",
+        "status": "current",
+        "is_hardcoded": false,
+        "regions": [
+          "CN"
+        ]
+      },
       "PLQ110_16.0.9.401(CN01)": {
         "arb": 1,
         "major": 3,
@@ -7222,7 +7274,7 @@
         "md5": "6533ffcf2bbd162e64817a16a4156883",
         "first_seen": "2026-07-14",
         "last_checked": "2026-07-24",
-        "status": "current",
+        "status": "archived",
         "is_hardcoded": false,
         "regions": [
           "CN"

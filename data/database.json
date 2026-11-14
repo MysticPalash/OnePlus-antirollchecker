@@ -433,7 +433,7 @@
         "minor": 0,
         "md5": "1a8f7ad9d729ca7868003c3f39920af5",
         "first_seen": "2026-07-29",
-        "last_checked": "2026-11-13",
+        "last_checked": "2026-11-14",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -508,7 +508,7 @@
         "minor": 0,
         "md5": "c3c01802a27eaebe69a76dc03066c0e4",
         "first_seen": "2026-09-17",
-        "last_checked": "2026-11-13",
+        "last_checked": "2026-11-14",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -651,7 +651,7 @@
         "minor": 0,
         "md5": "c0debf3a37dea71b0155a97781de08b4",
         "first_seen": "2026-02-04",
-        "last_checked": "2026-11-13",
+        "last_checked": "2026-11-14",
         "status": "archived",
         "is_hardcoded": false,
         "regions": [
@@ -806,7 +806,7 @@
         "minor": 0,
         "md5": "005720cd3a7ed022c504ea46aa08b108",
         "first_seen": "2026-02-04",
-        "last_checked": "2026-11-13",
+        "last_checked": "2026-11-14",
         "status": "archived",
         "is_hardcoded": false,
         "regions": [
@@ -919,7 +919,7 @@
         "minor": 120,
         "md5": "67b2053b1be6dc34218767796f407104",
         "first_seen": "2026-10-20",
-        "last_checked": "2026-11-13",
+        "last_checked": "2026-11-14",
         "status": "current",
         "is_hardcoded": true,
         "regions": [
@@ -990,7 +990,7 @@
         "minor": 120,
         "md5": "86dcd59c10bf860c11b7019e6a036cb9",
         "first_seen": "2026-10-20",
-        "last_checked": "2026-11-13",
+        "last_checked": "2026-11-14",
         "status": "current",
         "is_hardcoded": true,
         "regions": [
@@ -1061,7 +1061,7 @@
         "minor": 120,
         "md5": "51a6e665d1533fffc8c28e551fb8191d",
         "first_seen": "2026-10-08",
-        "last_checked": "2026-11-13",
+        "last_checked": "2026-11-14",
         "status": "current",
         "is_hardcoded": true,
         "regions": [
@@ -1223,7 +1223,7 @@
         "minor": 0,
         "md5": "ab372586fbb439bad1e8cfa19dfee40f",
         "first_seen": "2026-02-04",
-        "last_checked": "2026-11-13",
+        "last_checked": "2026-11-14",
         "status": "archived",
         "is_hardcoded": false,
         "regions": [
@@ -2358,7 +2358,7 @@
         "minor": 0,
         "md5": "4f1b8c4f45cfb394c05e1ef5728b13a2",
         "first_seen": "2026-02-04",
-        "last_checked": "2026-11-13",
+        "last_checked": "2026-11-14",
         "status": "archived",
         "is_hardcoded": false,
         "regions": [
@@ -2371,7 +2371,7 @@
         "minor": 0,
         "md5": "7b3a8722f2e7395367ec6d3e8851c0ba",
         "first_seen": "2026-09-17",
-        "last_checked": "2026-11-13",
+        "last_checked": "2026-11-14",
         "status": "archived",
         "is_hardcoded": false,
         "regions": [
@@ -2429,7 +2429,7 @@
         "minor": 120,
         "md5": "aaeaae4bedf7d78dc92767f882ec1c9b",
         "first_seen": "2026-10-21",
-        "last_checked": "2026-11-13",
+        "last_checked": "2026-11-14",
         "status": "current",
         "is_hardcoded": true,
         "regions": [
@@ -2649,7 +2649,7 @@
         "minor": 0,
         "md5": "54198f0ee0efc9b43851533bd8774349",
         "first_seen": "2026-10-29",
-        "last_checked": "2026-11-13",
+        "last_checked": "2026-11-14",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -4334,7 +4334,7 @@
         "minor": 0,
         "md5": "5a7aece47ade5074e45b3b1c067883d7",
         "first_seen": "2026-11-06",
-        "last_checked": "2026-11-13",
+        "last_checked": "2026-11-14",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -4418,7 +4418,7 @@
         "minor": 0,
         "md5": "b009144669546e8e07fe1db606dbec3e",
         "first_seen": "2026-10-29",
-        "last_checked": "2026-11-13",
+        "last_checked": "2026-11-14",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -6100,7 +6100,7 @@
         "minor": 0,
         "md5": "ba2bc492a059033a1bbc5ac30cdea645",
         "first_seen": "2026-07-29",
-        "last_checked": "2026-11-13",
+        "last_checked": "2026-11-14",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -6216,7 +6216,7 @@
         "minor": 0,
         "md5": "0a219c952c05649ac12dc46934bfc697",
         "first_seen": "2026-07-29",
-        "last_checked": "2026-11-13",
+        "last_checked": "2026-11-14",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -6229,7 +6229,7 @@
         "minor": 0,
         "md5": "d8750ca653d212843cb40c8292e1eb70",
         "first_seen": "2026-09-17",
-        "last_checked": "2026-11-13",
+        "last_checked": "2026-11-14",
         "status": "current",
         "is_hardcoded": false,
         "regions": [
@@ -6394,6 +6394,19 @@
     "device_name": "OnePlus Pad 2 Pro",
     "device_order": 43,
     "versions": {
+      "OPD2413_17.0.0.103(CN01)": {
+        "arb": 1,
+        "major": 3,
+        "minor": 0,
+        "md5": "e08a8f50a437f32f57a027c8d87969d3",
+        "first_seen": "2026-11-14",
+        "last_checked": "2026-11-14",
+        "status": "current",
+        "is_hardcoded": false,
+        "regions": [
+          "CN"
+        ]
+      },
       "OPD2413_16.0.9.400(CN01)": {
         "arb": 1,
         "major": 3,
@@ -6401,7 +6414,7 @@
         "md5": "c7d36364f94daa509c19f71b1e100982",
         "first_seen": "2026-07-15",
         "last_checked": "2026-08-27",
-        "status": "current",
+        "status": "archived",
         "is_hardcoded": false,
         "regions": [
           "CN"
@@ -8071,6 +8084,19 @@
     "device_name": "OnePlus Ace 6",
     "device_order": 36,
     "versions": {
+      "PLQ110_17.0.1.200(CN01)": {
+        "arb": 1,
+        "major": 3,
+        "minor": 0,
+        "md5": "fb2483582de5a67d44598b85adc498b4",
+        "first_seen": "2026-11-14",
+        "last_checked": "2026-11-14",
+        "status": "current",
+        "is_hardcoded": false,
+        "regions": [
+          "CN"
+        ]
+      },
       "PLQ110_16.0.10.500(CN01)": {
         "arb": 1,
         "major": 3,
@@ -8078,7 +8104,7 @@
         "md5": "426959f59655e11efc126bc788a9a77f",
         "first_seen": "2026-08-25",
         "last_checked": "2026-08-25",
-        "status": "current",
+        "status": "archived",
         "is_hardcoded": false,
         "regions": [
           "CN"
@@ -8246,6 +8272,19 @@
     "device_name": "OnePlus Ace 6T",
     "device_order": 35,
     "versions": {
+      "PLR110_17.0.1.200(CN01)": {
+        "arb": 0,
+        "major": 3,
+        "minor": 0,
+        "md5": "be313bb05f016ba67e93d0cc2e05bbb9",
+        "first_seen": "2026-11-14",
+        "last_checked": "2026-11-14",
+        "status": "current",
+        "is_hardcoded": false,
+        "regions": [
+          "CN"
+        ]
+      },
       "PLR110_17.0.0.101(CN01)": {
         "arb": 0,
         "major": 3,
@@ -8253,7 +8292,7 @@
         "md5": "a076e2d13d4c61d4390b802264b68b66",
         "first_seen": "2026-10-16",
         "last_checked": "2026-10-19",
-        "status": "current",
+        "status": "archived",
         "is_hardcoded": false,
         "regions": [
           "CN"

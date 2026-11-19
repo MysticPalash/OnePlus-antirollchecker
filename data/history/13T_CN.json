@@ -1,13 +1,23 @@
 {
   "history": [
     {
+      "version": "PKX110_17.0.1.201(CN01)",
+      "arb": 1,
+      "major": 3,
+      "minor": 0,
+      "first_seen": "2026-11-19",
+      "last_checked": "2026-11-19",
+      "status": "current",
+      "md5": "13fb8b11b71d8c68e22bdc77562782c8"
+    },
+    {
       "version": "PKX110_17.0.0.104(CN01)",
       "arb": 1,
       "major": 3,
       "minor": 0,
       "first_seen": "2026-10-16",
       "last_checked": "2026-10-30",
-      "status": "current",
+      "status": "archived",
       "md5": "d1df5ad81556cb07044d02cce6db843a"
     },
     {
